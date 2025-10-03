@@ -1,0 +1,14 @@
+# This file has been generated automatically by droidian-new-device
+
+# unihertz titanpocket
+unihertz_titanpocket:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 30
+  use_internal_repository: true
+
+  packages:
+    - adaptation-unihertz-titanpocket
+    - adaptation-unihertz-titanpocket-configs

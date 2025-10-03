@@ -1,0 +1,17 @@
+Package: adaptation-unihertz-titanpocket
+Version: 0.0.0+git20251003122612.9133a3d.bookworm
+Architecture: all
+Maintainer: Droidian Porter <me@example.com>
+Installed-Size: 11
+Depends: adaptation-hybris-api30-phone, adaptation-unihertz-titanpocket-configs (= 0.0.0+git20251003122612.9133a3d.bookworm), android-system-gsi-30-bin
+Filename: /home/me/droidianv2/droidian/unihertz/titanpocket/droidian/apt/pool/local/adaptation-unihertz-titanpocket_0.0.0+git20251003122612.9133a3d.bookworm_all.deb
+Size: 2884
+MD5sum: d032b2f3379e8d192ce68994b8e4e94a
+SHA1: 2a2f20fd915dff67279390421d8dbab0d75fe9ca
+SHA256: aaafc7a5130b196e5d8f6d4a71102505853fe8f33e87559e25cdbdd32c8ad33b
+Section: metapackages
+Priority: optional
+Description: Community adaptation for Unihertz Titan Pocket (metapackage)
+ Pulls in the Titan Pocket device configuration, Halium 11 (API 30) base,
+ and the Android system GSI for Droidian.
+

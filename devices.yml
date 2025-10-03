@@ -1,0 +1,251 @@
+########################################################################
+# Basic anchors                                                        #
+########################################################################
+
+.devtools_packages:
+  packages: &devtools_packages
+    - droidian-devtools
+    - adaptation-hybris-devtools
+
+.adaptation_generic_packages:
+  packages: &adaptation_generic_packages
+    - adaptation-android-generic
+
+.fxtec_pro1_packages:
+  packages: &fxtec_pro1_packages
+    - adaptation-fxtec-pro1
+    - adaptation-fxtec-pro1-configs
+
+.fxtec_pro1x_packages:
+  packages: &fxtec_pro1x_packages
+    - adaptation-fxtec-pro1x
+    - adaptation-fxtec-pro1x-configs
+
+.google_sargo_packages:
+  packages: &google_sargo_packages
+    - adaptation-google-sargo
+    - adaptation-google-sargo-configs
+
+.lenovo_bronco_packages:
+  packages: &lenovo_bronco_packages
+    - adaptation-lenovo-bronco
+    - adaptation-lenovo-bronco-configs
+    - ofono-ril-plugin
+
+.sony_bahamut_packages:
+  packages: &sony_bahamut_packages
+    - adaptation-sony-bahamut
+    - adaptation-sony-bahamut-configs
+
+.volla_algiz_packages:
+  packages: &volla_algiz_packages
+    - adaptation-volla-algiz
+    - adaptation-volla-algiz-configs
+
+.volla_mimameid_packages:
+  packages: &volla_mimameid_packages
+    - adaptation-volla-mimameid-h12
+    - adaptation-volla-mimameid-h12-configs
+
+.volla_mimir_packages:
+  packages: &volla_mimir_packages
+    - adaptation-volla-mimir
+    - adaptation-volla-mimir-configs
+    - adaptation-volla-mimir-configs-luks-encryption
+
+.volla_vidofnir_packages:
+  packages: &volla_vidofnir_packages
+    - adaptation-volla-vidofnir
+    - adaptation-volla-vidofnir-configs
+
+.volla_yggdrasil_packages:
+  packages: &volla_yggdrasil_packages
+    - adaptation-volla-yggdrasil
+    - adaptation-volla-yggdrasil-configs
+
+.volla_yggdrasilx_packages:
+  packages: &volla_yggdrasilx_packages
+    - adaptation-volla-yggdrasilx
+    - adaptation-volla-yggdrasilx-configs
+
+.xiaomi_miatoll_packages:
+  packages: &xiaomi_miatoll_packages
+    - adaptation-xiaomi-miatoll
+    - adaptation-miatoll-configs
+
+########################################################################
+# Recovery-flashable rootfses                                          #
+########################################################################
+
+rootfs:
+  type: rootfs
+  arch: [arm64]
+  edition: phosh
+  variant: phone
+  apilevel: [28, 29, 30, 32, 33]
+
+  packages: *adaptation_generic_packages
+
+  bundles:
+    # Developer tools bundle
+    - name: droidian-devtools
+      arch: any
+      apilevel: any
+      only_stable: yes
+      packages: *devtools_packages
+
+########################################################################
+# Device specific images                                               #
+########################################################################
+
+#
+# F(x)tec
+#
+
+# F(x)tec Pro1 (qx1000)
+fxtec_pro1:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 28
+  droidian_variant: fxtec
+
+  packages: *fxtec_pro1_packages
+
+# F(x)tec Pro1-X (qx1050)
+fxtec_pro1x:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 30
+  droidian_variant: fxtec
+
+  packages: *fxtec_pro1x_packages
+
+#
+# Google
+#
+
+# Google Pixel 3a (sargo)
+google_sargo:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 28
+
+  packages: *google_sargo_packages
+
+#
+# Lenovo
+#
+
+# Lenovo Thinkphone by Motorola (bronco)
+lenovo_bronco:
+  type: image
+  arch: arm64
+  edition: [phosh, plamo_wf_experimental]
+  variant: phone
+  apilevel: 32
+
+  packages: *lenovo_bronco_packages
+
+#
+# Sony
+#
+
+# Sony Xperia 5 (bahamut)
+sony_bahamut:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 30
+
+  packages: *sony_bahamut_packages
+
+#
+# Volla
+#
+
+# Volla Phone (yggdrasil)
+volla_yggdrasil:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 28
+
+  packages: *volla_yggdrasil_packages
+
+# Volla Phone X (yggdrasilx)
+volla_yggdrasilx:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 29
+
+  packages: *volla_yggdrasilx_packages
+
+# Volla Phone 22 (mimameid)
+volla_mimameid:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 32
+
+  packages: *volla_mimameid_packages
+
+# Volla Phone X23 (vidofnir)
+volla_vidofnir:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 32
+
+  packages: *volla_vidofnir_packages
+
+# Volla Phone Quintus (algiz)
+volla_algiz:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 33
+
+  packages: *volla_algiz_packages
+
+# Volla Tablet (mimir)
+#
+# Volla Tablet has a modem, and allows phone
+# calls. Thus, we're using the "phone" variant
+# here. The proper device chassis package
+# is pulled in by the adaptation.
+volla_mimir:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 33
+  droidian_variant: volla-mimir
+
+  packages: *volla_mimir_packages
+
+#
+# Xiaomi
+#
+
+# Xiaomi Redmi Note 9S/9 Pro/9 Pro Max/M2 Pro (miatoll)
+xiaomi_miatoll:
+  type: image
+  arch: arm64
+  edition: phosh
+  variant: phone
+  apilevel: 29
+
+  packages: *xiaomi_miatoll_packages

@@ -1,0 +1,6 @@
+Origin: local
+Label: local
+Suite: stable
+Codename: stable
+Architectures: arm64 all
+Components: main

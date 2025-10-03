@@ -1,0 +1,76 @@
+architecture: arm64
+
+actions:
+  - action: debootstrap
+    suite: bookworm
+    components:
+      - main
+      - contrib
+      - non-free
+      - non-free-firmware
+    mirror: http://deb.debian.org/debian
+
+  - action: apt
+    description: Install CA certs first (for HTTPS repos)
+    packages:
+      - ca-certificates
+
+  - action: run
+    description: Mount local APT repo into chroot
+    chroot: false
+    command: |
+      set -e
+      CHROOT_TOP="$(find /home/me/droidianv2/droidian/unihertz/titanpocket -maxdepth 1 -mindepth 1 -type d -name '.debos-*' -printf '%T@ %p\n' | sort -nr | head -n1 | awk '{ print $2 }')"
+      [ -n "${CHROOT_TOP}" ] || { echo "No debos workdir found" >&2; exit 1; }
+      TARGET="${CHROOT_TOP}/root/var/lib/droidian-internal-repository"
+      mkdir -p "${TARGET}"
+      mount --bind "${DROIDIAN_REPOSITORY_DIR}" "${TARGET}"
+
+  - action: run
+    description: Add local APT repo + Droidian production repo, then apt update
+    chroot: true
+    command: |
+      set -e
+      echo "deb [trusted=yes] file:///${DROIDIAN_REPOSITORY_DIR}" stable main > /etc/apt/sources.list.d/_local-titanpocket.list
+      echo "deb [trusted=yes] https://production.repo.droidian.org bookworm main"> /etc/apt/sources.list.d/_droidian.list
+      apt-get update
+      # Debug: show what apt sees
+      apt-cache policy adaptation-hybris-api30-phone android-system-gsi-30-bin adaptation-unihertz-titanpocket || true
+
+  - action: run
+    description: Unmount local APT repo from chroot
+    chroot: false
+    command: |
+      set -e
+      umount /var/lib/droidian-internal-repository || true
+
+  - action: apt
+    description: Install Halium base + Android GSI + your adaptation
+    packages:
+      - adaptation-hybris-api30-phone
+      - android-system-gsi-30-bin
+      - adaptation-unihertz-titanpocket
+
+  - action: run
+    description: Clean apt cache
+    chroot: true
+    command: apt-get clean
+
+  - action: filesystem-deploy
+    description: Create rootfs tarball
+    image: droidian-rootfs-phosh-api30-arm64.tar.xz
+    compression: xz
+
+  - action: image-partition
+    description: Build system.img
+    imagename: system.img
+    imagesize: 3500M
+    partitiontype: gpt
+    partitions:
+      - name: system
+        fs: ext4
+        start: 0%
+        end: 100%
+        content:
+          - source: rootfs
+            type: directory
