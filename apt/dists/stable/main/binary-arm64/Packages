@@ -4,7 +4,7 @@ Architecture: all
 Maintainer: Droidian Porter <me@example.com>
 Installed-Size: 11
 Depends: adaptation-hybris-api30-phone, adaptation-unihertz-titanpocket-configs (= 0.0.0+git20251003122612.9133a3d.bookworm), android-system-gsi-30-bin
-Filename: https://github.com/sr-hawk/titanpocket-droidian/releases/download/v1/adaptation-unihertz-titanpocket_0.0.0+git20251003122612.9133a3d.bookworm_all.deb
+Filename: pool/local/adaptation-unihertz-titanpocket_0.0.0+git20251003122612.9133a3d.bookworm_all.deb
 Size: 2884
 MD5sum: d032b2f3379e8d192ce68994b8e4e94a
 SHA1: 2a2f20fd915dff67279390421d8dbab0d75fe9ca
@@ -23,7 +23,7 @@ Maintainer: Droidian Porter <me@example.com>
 Installed-Size: 7830
 Depends: initramfs-tools, systemd, udev, kmod, dconf-service
 Recommends: droidian-devtools
-Filename: https://github.com/sr-hawk/titanpocket-droidian/releases/download/v1/adaptation-unihertz-titanpocket-configs_0.0.0+git20251003122612.9133a3d.bookworm_arm64.deb
+Filename: pool/local/adaptation-unihertz-titanpocket-configs_0.0.0+git20251003122612.9133a3d.bookworm_arm64.deb
 Size: 1350400
 MD5sum: 2b809ebe1b860917a5c952ef2e75f1dd
 SHA1: 86ddbdd876ef902e7eb53f6ca55be053da75550e
@@ -38,7 +38,7 @@ Package: android-system-gsi-30-bin
 Version: 1.0
 Architecture: arm64
 Maintainer: Droidian Porter <me@example.com>
-Filename: https://github.com/sr-hawk/titanpocket-droidian/releases/download/v1/android-system-gsi-30-bin.deb
+Filename: pool/local/android-system-gsi-30-bin.deb
 Size: 442339364
 MD5sum: eb3c6fa38dd71ae9dc5fadc6a8939d16
 SHA1: 7c6847ff1a85ffb2e9aa1d71b3dbb2e5c958e923
