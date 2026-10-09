@@ -1,0 +1,52 @@
+# Installation and major risks
+
+**For experienced Titan Pocket testers with an established stock recovery setup. This exact candidate has not yet passed a fresh-install test.**
+
+## Major risks — read first
+
+1. **Complete userdata loss.** This installation replaces both `boot` and `userdata`. Apps, accounts, messages, photos, and other files in userdata are erased. It is not an in-place upgrade.
+2. **Loss of IMEI and calibration data.** Never use **Format All + Download**, a separate format operation, or **Firmware Upgrade** with this package. Formatting protected/device-specific storage can destroy modem identity, radio calibration, and other data unique to your phone. A generic stock firmware download is not a backup of that data.
+3. **An unbootable or hard-bricked phone.** A wrong scatter, wrong device, unexpected partition layout, wrong Download Agent, or accidentally selected bootloader/preloader partition can break recovery as well as normal boot. Recovery is not guaranteed.
+4. **Interrupted writes.** A USB disconnect, power failure, or host crash during flashing can leave a partially written phone that will not boot. Use a charged phone, reliable cable, and stable host power.
+5. **An experimental, unlocked system.** Cellular and emergency calling are untested, suspend/battery behavior is uncertain, and the desktop starts unlocked. Do not rely on it as your only phone or use it for sensitive personal data.
+
+The general Format All/IMEI warning is also documented in [FuriLabs’ manufacturer flashing guide](https://furilabs.com/flash-guide/). That guide is for different hardware: **do not use its firmware, Download Agent, or upgrade procedure on a Titan Pocket**.
+
+## Supported starting point
+
+- **Unihertz Titan Pocket only**, stock firmware **2023010520**, kernel **4.14.186-g40b2a1864-dirty**, and an **unlocked bootloader**.
+- The original stock partition layout and vendor stack must still be present. Other Titan models, other firmware versions, and repartitioned devices are not validated.
+- Backups stored off the phone, matching stock firmware, and a recovery procedure already established for your own phone. Do not assume that a stock archive restores device-specific data.
+- SP Flash Tool and a Download Agent already known to work with your Pocket. Unlocking, choosing an initial DA, and recovering an unknown device are outside this guide. No DA is supplied or endorsed by this package.
+
+## Flash the candidate
+
+1. Put `boot.img`, `userdata.img`, `MT6771_Android_scatter.txt`, and `SHA256SUMS` in one folder. Read the manifest to confirm the build name.
+2. On Linux, open a terminal in that folder and run:
+   ```sh
+   sha256sum -c SHA256SUMS
+   ```
+   Every entry must say `OK`. Stop on any mismatch.
+3. Open SP Flash Tool, select your established Download Agent, and load **this release’s scatter**.
+4. Choose **Download Only**. Check the partition list yourself: **only `boot` and `userdata` may be selected**, with paths to these two images. Do not select preloader, bootloaders, NVRAM/NVDATA, `super`, or any other partition.
+5. Start Download. Connect the powered-off phone using the connection sequence established for your setup. Wait for SP Flash Tool to report successful completion before disconnecting or booting.
+6. Boot normally. First boot expands storage and installs bundled packages offline before starting the desktop, so allow it longer than later boots. The installer has a 30-minute timeout; this is not a measured normal boot time.
+7. Check touchscreen, typing, Home, Fn + Home, scroll and mouse modes, audio, and brightness. Reboot once more and repeat the basic checks.
+
+**Stop on a partition-layout, authentication, or write error.** Save the error/log, removing personal identifiers before sharing. Do not format, change partition addresses, switch to Firmware Upgrade, select additional partitions, or repeatedly force retries to bypass it.
+
+## First-boot checks
+
+In a terminal on the phone:
+
+```sh
+systemctl status pocket-first-boot-install.service --no-pager
+cat /var/lib/titan-pocket/first-boot-installed
+df -h / /home
+```
+
+The installer should finish successfully and create its marker. Root is configured to grow from 8 GiB to **16 GiB**; the outer userdata filesystem starts at **10 GiB** and grows to the existing partition. Home uses the remaining userdata space. The package retains the stock kernel and DTB and does not replace the stock vendor partitions.
+
+SSH is deliberately disabled, including early-boot recovery SSH. The developer’s old connection helpers will not work. If you want SSH later, configure it from the phone with fresh host keys and your own authorized key. Never reuse another person’s key or a shared host identity.
+
+If the desktop does not appear, this guide does not provide a remote recovery shell. Use your previously established stock recovery route. Normal package updates are not a validated upgrade path for this custom kernel/initramfs and modified desktop stack.

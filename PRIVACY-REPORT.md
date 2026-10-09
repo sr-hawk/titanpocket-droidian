@@ -1,15 +1,17 @@
 # Privacy audit
 
-The `titan-pocket-privacy-01` candidate was prepared October 9, 2026 from a pristine-rootfs-based development build. It is not a dump of a phone’s live user data.
+The `titan-pocket-current-02` candidate was prepared October 9, 2026 from a pristine-rootfs-based development build. It is not a dump of a phone’s live user data.
 
 ## Removed or reset
 
 - SSH authorized keys and embedded SSH host private keys in both the initramfs and Linux filesystem, including inherited initramfs keys.
 - An inherited TLS test private key and certificate.
 - Existing machine IDs, logs, and root cache/local state.
-- Personal build-directory prefixes in the custom VT module, GTK3, and wlroots binaries. Installer checksums were regenerated after these changes.
+- Personal build-directory prefixes in custom binaries, including the new GTK4 and game payloads. GTK cross-build locale/data lookups were corrected to target paths. Installer checksums were regenerated after these changes.
 
 SSH startup is disabled in both boot stages. Linux SSH services and sockets are masked. A tester must explicitly configure their own server, generate fresh host keys, and enroll their own public key to enable access. No shared replacement login key is supplied.
+
+The current functionality update was assembled from local system payloads. No live home directory, credentials, account state, or personal game settings were copied from the phone.
 
 ## Checks completed
 

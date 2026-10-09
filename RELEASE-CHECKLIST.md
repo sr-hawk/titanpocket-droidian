@@ -1,30 +1,25 @@
-# Public release checklist
+# Before publishing
 
-The privacy-cleaned candidate and documentation are staged locally. No remote repository or public release has been created.
+The updated `titan-pocket-current-02` candidate is staged locally. Nothing has been uploaded.
 
 ## Completed
 
-- Separate repository with new history and a neutral project identity.
-- Public file allowlist; images excluded from Git history.
-- Image privacy cleanup, offline validation, manifest, and checksums.
-- Installation notes, hardware status, and privacy report.
+- Current custom functionality compared with installed system files on the development phone.
+- Updated payloads assembled into a clean image; missing tilt executable and installer manifest fixed.
+- Dependency-presence audit, installer preflight regression checks, filesystem and sparse-image verification.
+- Privacy cleanup repeated; maintainer SSH keys removed and SSH disabled in both boot stages.
+- Simple feature/status guide, installation instructions, major SP Flash Tool risks, component hashes, and image checksums.
+- Separate Git history with a neutral project identity; no remote or developer history.
 
-## Before publishing the binaries
+## Still required before public binary distribution
 
-- Test this exact image pair from a fresh installation on the supported firmware baseline. Record first boot, storage expansion, second boot, display, keyboard, pointer/scroll modes, and intended access setup.
-- Assemble the matching source, patches, build instructions, and upstream license notices for the distributed components. This release repository does not yet contain a complete corresponding-source package or reproducible build environment. Upstream components retain their respective licenses; no blanket license is assigned to the combined firmware image.
-- Record the tested SP Flash Tool version, Download Agent identity and provenance, and connection sequence. Current installation instructions assume an established working setup.
-- Keep the untested hardware and unlocked desktop clearly disclosed.
-- Add the actual download URL after publication. Check the chosen host’s current attachment-size limits and document reassembly if the image package must be split.
+- Fresh-install **this exact image pair** on the supported baseline and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, and games. The existing phone has not been reflashed during preparation.
+- Assemble matching corresponding source, local modifications, build instructions, and upstream license notices for the distributed components. This repository currently contains release metadata/documentation, not a complete source release or reproducible build environment. No blanket license is assigned to the combined image.
+- Record the successfully tested SP Flash Tool version, Download Agent provenance/hash, and connection sequence. The install guide currently requires an already established Pocket setup.
+- Add the actual download URL only after publication; use the host’s supported attachment size/splitting procedure for the multi-gigabyte userdata image.
 
-## Files to distribute
+## Public file boundary
 
-Distribute only the two cleaned images, their scatter, manifest, checksums, flashing notes, guide, status, privacy report, release checklist, and the matching source/license material when assembled. Do not distribute `.git`, private working folders, or unrelated historical builds.
+Only this repository’s tracked files, `boot.img`, `userdata.img`, and the reviewed source/license package should be shared. Images are deliberately excluded from Git. Do not share `.git`, private work folders, old images, debug helpers, SSH files, or logs from the development workspace.
 
-From a directory containing the images and scatter, verify:
-
-```sh
-sha256sum -c SHA256SUMS
-```
-
-The Git-tracked checksum file covers those three payloads. A checksum match identifies the audited candidate; it does not replace a boot test.
+Run `sha256sum -c SHA256SUMS` beside the images and scatter. Checksums identify the candidate; they do not replace a boot test.

@@ -1,7 +1,7 @@
 {
-  "build": "titan-pocket-privacy-01",
+  "build": "titan-pocket-current-02",
   "date": "2026-10-09",
-  "base": "attempt-16-native: boot 15 + userdata 09",
+  "base": "privacy-cleaned pristine-rootfs build with current custom functionality",
   "firmware_baseline": "2023010520",
   "mode": "Download Only",
   "selected_partitions": [
@@ -16,8 +16,8 @@
     },
     {
       "file": "userdata.img",
-      "bytes": 4060923880,
-      "sha256": "e30fb90a65758eb921c714a78e1bda6e97d78cd58f14bb962484157eab093c22"
+      "bytes": 4069963692,
+      "sha256": "bd4238a19745841900e51fa20fd813529c15c409971181079a27d979b0d17796"
     },
     {
       "file": "MT6771_Android_scatter.txt",
@@ -31,16 +31,23 @@
     "ext4_consistency_checked": true,
     "outer_metadata_and_reservation_verified": true,
     "expanded_bytes": 10737418240,
-    "expanded_sha256": "699f2e523135317a117448f066134b384741b260f4871332bb796b1d25464a98",
-    "expanded_crc32": "18231392",
+    "expanded_sha256": "760650287ccccad1fa63732dc700cc17c4d051d6e58204fac45179e05445ddad",
+    "expanded_crc32": "d7aa66cc",
     "chunk_counts": {
-      "0xcac1": 185,
-      "0xcac2": 242
+      "0xcac1": 184,
+      "0xcac2": 239
     },
     "aosp_decode_passed": true,
-    "rootfs_sha256": "2cda8569b430d70c8fbcc7bb8a3e673ad529a8881f5c3dc8ed6bb2bb7e8cabeb",
+    "rootfs_sha256": "e21ab9c6dad863c93671aeced6c37be182ee435d77d672ed58fcbd6f598d3768",
     "nested_rootfs_verified": true,
-    "runtime_tested": false
+    "runtime_tested": false,
+    "dependency_objects_checked": 219,
+    "installer_preflight_tests_passed": 5,
+    "overlay_payloads_verified": 1237,
+    "offline_package_count": 376,
+    "unlisted_packages_removed": 6,
+    "unprotected_package_overwrites": 0,
+    "offline_package_dependencies_satisfied": true
   },
   "runtime_tested": false,
   "privacy": {

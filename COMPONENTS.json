@@ -1,0 +1,183 @@
+{
+  "build": "titan-pocket-current-02",
+  "date": "2026-10-09",
+  "scope": "Key custom release payloads; hashes describe cleaned release bytes, not personal device state.",
+  "runtime_tested": false,
+  "components": [
+    {
+      "path": "/usr/libexec/phosh",
+      "sha256": "3552548480d53aad23c12f15f8f580610c639097f3cbb09c5aa1549f489262f8",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/bin/phoc",
+      "sha256": "5687ff0453ab6e528ce35c2dc6c5121f6136b43b04fdc9ce8dc502aa48b0b8f8",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libwlroots.so.12a",
+      "sha256": "3a0382397c481658fc591887878e350ea3579f3da415b8ac47765fc6bb443f47",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libgtk-3.so.0.2417.32",
+      "sha256": "40df2d2f627453a9ecf977d7772f007f0cae8b19b13117e4f3597409ad112bef",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libgdk-3.so.0.2417.32",
+      "sha256": "056455f96fc0d23a1198bb5f51182ae82f244db39a4cd790915542b15f4e4e67",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libhandy-1.so.0",
+      "sha256": "cb7b23771019b7c385b132c96ba4987578979b49216714123475ce334ceef153",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libgtk-4.so.1.1800.4",
+      "sha256": "37d4c4e652a70bbbdc63832393ffb6d3f1946bcab3e688f92f6b5e5f3821cb1d",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libadwaita-1.so.0",
+      "sha256": "12e3c6c300072c7cf860b4b5993c7fa9018ae12e6f84dd5f4350c196979f1fc3",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libdroid-0.so.1",
+      "sha256": "243e392e4b14bc94109a70e0f7d72b520627b692ce8b140f3e5b234d0eeaae5f",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/share/glib-2.0/schemas/eu.medesimo.Libdroid.gschema.xml",
+      "sha256": "f5092c541b497ceee4aad3d99079d7b1c1640efc65a420ae57e0660c2a01fce3",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libsfml-window.so.2.6.2",
+      "sha256": "465acf40e2b82b6260cbbc6dad63c1064214d48a92627c826d33e5ed6b36c65f",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libsfml-audio.so.2.6.2",
+      "sha256": "ab091d8716e85bd08f0eaa5fb5493c2d0a0cbe1189d13817a5fda1426003620a",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libsfml-graphics.so.2.6.2",
+      "sha256": "0b70d9937f472d295bd634bb1724ed6021d5b3a966f9ad98993cc9ab6687050b",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libsfml-system.so.2.6.2",
+      "sha256": "702266004cc317fef04f2e538a84445aecccdfa71eb48778432a79dac4690a80",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libGLU.so.1.3.1",
+      "sha256": "87803ea57c41370662cb94fb523da4cac67faab60e1e44a804faf2a883d78536",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/aarch64-linux-gnu/libSDL-1.2.so.1.2.68",
+      "sha256": "4be5d55bed7a7bc095b3decbaddf12082162ced1ed17503cd4c55a63b66f2e86",
+      "installation": "first boot, with dpkg diversion"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/pocket-input",
+      "sha256": "e17778ce6af392e993c2e1b0f63c4affc6c2fc56783240055b003136ab1d2c94",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/pocket-volume",
+      "sha256": "be30e31a4b0a8a9d5bebc48e71b200db865c0af07b2d12ae9f57be85aeb7d7b8",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/pocket-backlight-commit",
+      "sha256": "1d771761fda6af8da12f254d90448a8a4a3b8419a6efb99f7553e5c333fc69a3",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/pocket-tilt",
+      "sha256": "41284f58c3f2ae88fc1018ae493d5a4bf1ff963586fef9d492b0dfc2958f5d02",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/pocket-game-boost",
+      "sha256": "b4e99d121ccf439675a8414190cc23fadef7ad8d04fb4a37285271d329b7f2b3",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/pocket-accel-start",
+      "sha256": "8bc3ca3eb4267e1b1c25bc65db10d43fb7d9d64b5295704cc5c6b647c4b5caf8",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/prepare-home",
+      "sha256": "461fcc3167b05788f8be9365d7dde67b714aa69d691b491138e2dc0363a2b4be",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/pocket-usb-qmult",
+      "sha256": "825d04b8dfc159b761e5d8663e95d9f129cb3d20d47ed6017e6dabc56dae6aad",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/pocket-first-boot-install",
+      "sha256": "bf6005d63d2ee07f5a710297d4960b82ff7105f73493c40490f2b4e0fabee340",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/titan-pocket/vt_mod.ko",
+      "sha256": "83e34201ed505fcc8d7805558677f466dbc075f31e113afcea46f52e52788673",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/bin/etr",
+      "sha256": "95c4a19354627a28fee0efb61374b3f2d12c3d4c051448efbca352bdbbf92146",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/bin/etr-pocket",
+      "sha256": "b1606300feba8095d8876afbb30fdd2f576bffea8e6034f0e5047cf62e75087d",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/bin/xfce4-terminal",
+      "sha256": "626c155fc9ef9ea717df6abd21571254fccf1f71366c628cc20bb9dd481286b6",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/opt/armagetron/bin/armagetronad",
+      "sha256": "b1d8a94de73f61ce21961146a45d336c09d9fd90959290c6905d697bf84b6807",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/etc/phosh/phoc.ini",
+      "sha256": "128eba39e45aa834722e1abfb0619bde654eea545ee82080b7103d763858ba1f",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/etc/dconf/db/pocket",
+      "sha256": "44d8b434c3fe0dfe9487cc81615bb0eecb595be832c4bc2d9bda678b43762710",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/etc/pulse/arm_droid_card_custom.pa",
+      "sha256": "cf8e73911c708609eeacac4ad75607cd9b51a2381658420db44417db30ba07e3",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/etc/udev/rules.d/70-pocket-smartpa.rules",
+      "sha256": "73aa780d55bce4ddffba4af65c893133127a679bb1defa8ae9218b65c481ea94",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/share/glib-2.0/schemas/90-pocket-desktop.gschema.override",
+      "sha256": "8cd50686736694ddd1d53c0a31ef9a2f84516ebb55e1c85fb03712993b061237",
+      "installation": "filesystem overlay"
+    }
+  ]
+}

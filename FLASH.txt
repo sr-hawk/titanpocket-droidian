@@ -1,8 +1,11 @@
-Experimental privacy-cleaned build; not boot-tested.
-Read README.md and PRIVACY-REPORT.md first.
-SP Flash Tool: Download Only. Select ONLY boot and userdata with this scatter.
-Installing erases userdata and personal files. Keep your established stock recovery route.
-Use your known-working Download Agent for this device and firmware baseline.
-Do not use Format All or Firmware Upgrade. Stop on a partition-layout mismatch.
-First boot expands storage and installs bundled packages before starting Phosh.
-SSH is disabled in early boot and the real root. Phosh still starts unlocked.
+EXPERIMENTAL CANDIDATE: titan-pocket-current-02. Not fresh-flash/boot tested.
+READ INSTALL.md FIRST. FLASHING ERASES USERDATA.
+Wrong settings can destroy device-specific modem data or brick the phone.
+Titan Pocket, stock 2023010520, unlocked bootloader, original partition layout only.
+Verify SHA256SUMS. Use your established Pocket Download Agent and recovery setup.
+SP Flash Tool: Download Only. Select ONLY boot and userdata from this release.
+NEVER Format All, Firmware Upgrade, or select preloader/other partitions.
+STOP on layout/authentication/write errors; do not force or format past them.
+Keep USB and power stable until successful completion.
+First boot expands storage and installs offline packages; then test a second boot.
+SSH (including early recovery SSH) is disabled. Phosh starts unlocked.

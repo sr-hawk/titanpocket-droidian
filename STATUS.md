@@ -1,33 +1,36 @@
-# Titan Pocket Droidian status
+# Current status
 
-Updated October 9, 2026. This repository describes the experimental `titan-pocket-privacy-01` image candidate and the broader development status. The privacy-cleaned candidate passes offline checks but has not been boot-tested.
+Updated October 9, 2026 for `titan-pocket-current-02`.
 
-## Current candidate
+The current local custom binaries/configuration were compared with the running development phone before packaging. The release uses a clean, pristine-rootfs-based filesystem, not a clone of personal phone data. **Component matches and offline image checks do not establish that this exact image boots. A fresh flash test remains outstanding.**
 
-The candidate derives from boot 15 + userdata 09. It retains the stock kernel and DTB for firmware 2023010520. Only boot and userdata are flashed; the existing stock vendor partitions are retained.
-
-The image includes native Phosh, Phoc, wlroots, GTK3/GDK3, and libhandy builds, the Pocket input service and keyboard layout, fingerprint integration, volume controls, and development tools. It is configured for a 720 × 720 desktop at scale 1. First boot installs the bundled packages and expands storage.
-
-SSH is disabled by default in the initramfs and Linux system. Shared SSH identities and authorization have been removed. Phosh still starts unlocked. Default Droidian accounts remain.
-
-## Development hardware status
-
-| Area | Status |
+| Area | Current state |
 | --- | --- |
-| Boot, touchscreen, physical keyboard | Working on the development phone. |
-| Capacitive keyboard | Working scrolling and pointer modes, including click, right-click, and drag. |
-| Hardware navigation | Home overview, Fn + Home quick settings, Fn navigation, Sym as Ctrl, Back as Escape. |
-| Display | Full 720 × 720 workspace with Pocket sizing changes. |
-| Fingerprint | Unlock reported working on the development phone. The candidate retains unlocked development startup. |
-| Audio | Speaker and volume keys working; microphone, earpiece, and headset routes need testing. |
-| Battery and CPU | Battery reporting works; VT and USB CPU-spin fixes recorded. Suspend, wake, and idle drain need testing. |
-| Wi-Fi | Scanning observed; connection, sustained transfer, and suspend/reconnect need confirmation. |
+| Boot, display, touchscreen, typing | Working on the development phone. Full 720 × 720 desktop at scale 1. |
+| Capacitive keyboard | Scroll and pointer modes; tap-click, long-press right-click, tap/hold dragging, typing guard, and Home suppression after swipes. |
+| Keyboard navigation | Home overview, Fn + Home quick settings, Fn navigation, Sym as Ctrl, Back as Escape. Current XKB/compositor fixes included. |
+| Desktop and applications | Current Phosh, Phoc, wlroots, GTK3/GDK3, GTK4, libhandy, libadwaita, and libdroid builds included. Pocket text/control sizes and shell layout fixes included. |
+| Fingerprint | Unlock has worked on the development phone; stock-identity integration included. This candidate still starts unlocked and includes no personal enrollment. |
+| Audio | Speaker/volume keys working on the development phone; smart-amplifier permissions and PulseAudio changes included. Other routes untested. |
+| Brightness | Commit-pulse workaround included. Slider curve/range still needs tuning. |
+| Sensors and games | Accelerometer startup, tilt service, and game-triggered GPU boost included. Extreme Tux Racer with GLES/Wayland and tilt work included. Armagetron is experimental: the phone dependency check found missing GLU; this candidate adds it, but the game needs a new runtime test. |
+| Terminal and UI demos | Custom Xfce terminal and GTK/libadwaita gallery applications included. |
+| Battery and CPU | Reporting works; VT and USB CPU-spin fixes retained. Game boost can increase heat and power use. Suspend, wake, and idle drain need testing. |
+| Wi-Fi | Scanning observed previously; connection, sustained transfer, and suspend/reconnect need confirmation. |
 | Bluetooth | Not working. |
-| Cellular | Calls, SMS, and mobile data untested. |
-| Other hardware | Camera, NFC, FM, IR, microSD, GPS, sensors, vibration, keyboard backlight, and notification LED are not all validated. Driver or HAL presence alone does not establish working hardware. |
+| Cellular | Calls, SMS, mobile data, and emergency calling untested. |
+| Other hardware | Camera, microphones/headsets, NFC, GPS, FM, IR, microSD, vibration, keyboard backlight, and notification LED are not all validated. Driver presence is not proof of working hardware. |
+| Access and updates | SSH disabled; default Droidian accounts retained; desktop starts unlocked. Kernel/initramfs and desktop upgrades are not integrated into a tested upgrade path. |
 
-## Work ahead of this image
+## What changed from privacy-01
 
-The development phone has later GTK4, libadwaita, compositor, shell, and brightness changes. Those changes are not all in this saved candidate. In particular, the later native GTK4/libadwaita/libdroid replacements and brightness workaround are absent from its build inventory.
+The previous image lacked later toolkit, shell, compositor, brightness, accelerometer, and game work. This candidate incorporates the current saved functionality. Packaging fixes add the missing tilt executable, remove malformed native-install records, validate native payloads before package installation, reject unlisted packages, and refresh checksums. Six stale offline packages were removed so the install set matches its manifest. Game libraries are bundled, including the missing GLU dependency. Embedded workstation paths are removed; cross-build GTK locale/data paths are corrected to their target locations.
 
-Successful earlier installations and live deployments do not establish that this exact privacy-cleaned image pair has passed a fresh installation test. See [the release checklist](RELEASE-CHECKLIST.md) for the remaining publication work.
+## Validation boundary
+
+- Read-only comparison with the development phone; no phone changes or flashing performed.
+- Native payload inventory, ELF dependency-presence audit, offline package dependency/conflict checks, installer validation, image file/link/mode readback, ext4 checks, sparse expansion, and nested-root verification.
+- Privacy checks repeated after updates; SSH remains disabled in both boot stages.
+- Fresh installation, storage growth, first/second boot, graphical behavior, and games on **this exact candidate** remain untested.
+
+`COMPONENTS.json` records the bundled custom payload hashes. `MANIFEST.json` and `SHA256SUMS` identify the image pair. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) before publication.
