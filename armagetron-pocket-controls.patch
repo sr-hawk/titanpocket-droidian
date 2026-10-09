@@ -1,0 +1,149 @@
+--- a/config/Makefile.am
++++ b/config/Makefile.am
+@@ -8,7 +8,7 @@
+ 	settings_visual.cfg\
+ 	settings_dedicated.cfg aiplayers.cfg rc.config\
+     settings_authentication.cfg\
+-	keys_cursor.cfg   keys_wasd.cfg  keys_zqsd.cfg\
++	keys_pocket.cfg   keys_cursor.cfg   keys_wasd.cfg  keys_zqsd.cfg\
+     keys_twohand.cfg  keys_x.cfg keys_cursor_single.cfg\
+     examples/breakfast_in_hell.cfg examples/single_use_turbo.cfg\
+ 	examples/fortress_soccer.cfg examples/death_zone.cfg\
+--- a/config/Makefile.in
++++ b/config/Makefile.in
+@@ -341,7 +341,7 @@
+ 	settings_visual.cfg\
+ 	settings_dedicated.cfg aiplayers.cfg rc.config\
+     settings_authentication.cfg\
+-	keys_cursor.cfg   keys_wasd.cfg  keys_zqsd.cfg\
++	keys_pocket.cfg   keys_cursor.cfg   keys_wasd.cfg  keys_zqsd.cfg\
+     keys_twohand.cfg  keys_x.cfg keys_cursor_single.cfg\
+     examples/breakfast_in_hell.cfg examples/single_use_turbo.cfg\
+ 	examples/fortress_soccer.cfg examples/death_zone.cfg\
+--- a/config/autoexec.cfg
++++ b/config/autoexec.cfg
+@@ -1,10 +1,3 @@
+-# Pocket port default config, loaded at every start (see
+-# tConfiguration.cpp / doc/config.html for how autoexec.cfg works).
+-#
+-# The Unihertz Titan Pocket hardware keyboard only exposes arrow keys as
+-# Fn+W/A/S/D, so the shipped default key layout (cursor keys) is unusable
+-# without holding a modifier. Load the WASD layout unconditionally so the
+-# game is playable out of the box even if the first-run setup wizard is
+-# skipped (e.g. a kiosk-style launch, or someone clicking through too
+-# fast on a touchscreen).
+-INCLUDE keys_wasd.cfg
++# Pocket bindings are defaults, not forced on every launch.
++# Select Pocket keyboard in first-run setup; later control edits remain saved.
++# Optional user overrides may be placed in the profile var/autoexec.cfg.
+--- a/config/default.cfg
++++ b/config/default.cfg
+@@ -92,3 +92,6 @@
+ KEYBOARD        94      PLAYER_BIND     CONSOLE_INPUT   0
+ KEYBOARD        19      PLAYER_BIND     PAUSE_GAME      0
+ KEYBOARD        112     PLAYER_BIND     PAUSE_GAME      0
++
++# Pocket defaults apply only to fresh profiles.
++INCLUDE keys_pocket.cfg
+--- a/src/tron/gArmagetron.cpp
++++ b/src/tron/gArmagetron.cpp
+@@ -171,19 +171,15 @@
+     net.NewChoice( "$first_setup_net_isdn", "$first_setup_net_isdn_help", gISDN );
+     net.NewChoice( "$first_setup_net_dsl", "$first_setup_net_dsl_help", gDSL );
+ 
+-    // Pocket port: default to the WASD layout instead of cursor keys. On the
+-    // Unihertz Titan Pocket hardware keyboard, the arrow keys only exist as
+-    // Fn+W/A/S/D, while plain A/D (turn) and W/S are reachable with no
+-    // modifier at all, so WASD is the layout that actually works
+-    // comfortably out of the box. Cursor keys are still offered in the
+-    // menu for anyone who plugs in a real keyboard.
+-    tString keyboardTemplate("keys_wasd.cfg");
++    // Two-thumb Pocket controls; existing users can retain their saved bindings.
++    tString keyboardTemplate("keys_pocket.cfg");
+     uMenuItemSelection<tString> k(&firstSetup, "$first_setup_keys", "$first_setup_keys_help", keyboardTemplate );
+     if ( !st_FirstUse )
+     {
+         k.NewChoice( "$first_setup_leave", "$first_setup_leave_help", tString("") );
+         keyboardTemplate="";
+     }
++    k.NewChoice( "Pocket", "A/L turn, Space brake, C camera; W/S navigate menus.", tString("keys_pocket.cfg") );
+     k.NewChoice( "$first_setup_keys_wasd", "$first_setup_keys_wasd_help", tString("keys_wasd.cfg") );
+     k.NewChoice( "$first_setup_keys_cursor", "$first_setup_keys_cursor_help", tString("keys_cursor.cfg") );
+     k.NewChoice( "$first_setup_keys_zqsd", "$first_setup_keys_zqsd_help", tString("keys_zqsd.cfg") );
+--- a/src/ui/uMenu.cpp
++++ b/src/ui/uMenu.cpp
+@@ -384,6 +384,7 @@
+                 Exit();
+                 break;
+ 
++            case(SDLK_w): // Pocket: plain-key menu navigation, after item/text handling
+             case(SDLK_UP):
+                             lastkey=tSysTimeFloat();
+                 selected++;
+@@ -396,6 +397,7 @@
+                 }
+                 break;
+ 
++            case(SDLK_s):
+             case(SDLK_DOWN):
+                             lastkey=tSysTimeFloat();
+                 selected--;
+@@ -409,9 +411,11 @@
+ 
+                 break;
+ 
++            case(SDLK_a):
+             case(SDLK_LEFT):
+                             items[selected]->LeftRight(-1);
+                 break;
++            case(SDLK_l):
+             case(SDLK_RIGHT):
+                             items[selected]->LeftRight(1);
+                 break;
+--- /dev/null
++++ b/config/keys_pocket.cfg
+@@ -0,0 +1,44 @@
++# Titan Pocket two-thumb preset (player 1).
++ # W/S navigate menus; A/L adjust menu choices; Enter selects; Back/Escape returns.
++# Clear letter and mouse-camera defaults, including second-player shortcuts.
++KEYBOARD 97 PLAYER_BIND NONE 0
++KEYBOARD 98 PLAYER_BIND NONE 0
++KEYBOARD 99 PLAYER_BIND NONE 0
++KEYBOARD 100 PLAYER_BIND NONE 0
++KEYBOARD 101 PLAYER_BIND NONE 0
++KEYBOARD 102 PLAYER_BIND NONE 0
++KEYBOARD 103 PLAYER_BIND NONE 0
++KEYBOARD 104 PLAYER_BIND NONE 0
++KEYBOARD 105 PLAYER_BIND NONE 0
++KEYBOARD 106 PLAYER_BIND NONE 0
++KEYBOARD 107 PLAYER_BIND NONE 0
++KEYBOARD 108 PLAYER_BIND NONE 0
++KEYBOARD 109 PLAYER_BIND NONE 0
++KEYBOARD 110 PLAYER_BIND NONE 0
++KEYBOARD 111 PLAYER_BIND NONE 0
++KEYBOARD 112 PLAYER_BIND NONE 0
++KEYBOARD 113 PLAYER_BIND NONE 0
++KEYBOARD 114 PLAYER_BIND NONE 0
++KEYBOARD 115 PLAYER_BIND NONE 0
++KEYBOARD 116 PLAYER_BIND NONE 0
++KEYBOARD 117 PLAYER_BIND NONE 0
++KEYBOARD 118 PLAYER_BIND NONE 0
++KEYBOARD 119 PLAYER_BIND NONE 0
++KEYBOARD 120 PLAYER_BIND NONE 0
++KEYBOARD 121 PLAYER_BIND NONE 0
++KEYBOARD 122 PLAYER_BIND NONE 0
++KEYBOARD 324 PLAYER_BIND NONE 0
++KEYBOARD 325 PLAYER_BIND NONE 0
++KEYBOARD 326 PLAYER_BIND NONE 0
++KEYBOARD 327 PLAYER_BIND NONE 0
++KEYBOARD 97 PLAYER_BIND CYCLE_TURN_LEFT 1
++KEYBOARD 108 PLAYER_BIND CYCLE_TURN_RIGHT 1
++KEYBOARD 32 PLAYER_BIND CYCLE_BRAKE 1
++KEYBOARD 99 PLAYER_BIND SWITCH_VIEW 1
++KEYBOARD 113 PLAYER_BIND GLANCE_LEFT 1
++KEYBOARD 111 PLAYER_BIND GLANCE_RIGHT 1
++KEYBOARD 119 PLAYER_BIND GLANCE_BACK 1
++KEYBOARD 112 PLAYER_BIND PAUSE_GAME 0
++KEYBOARD 115 PLAYER_BIND SCORE 0
++KEYBOARD 116 PLAYER_BIND CHAT 1
++KEYBOARD 27 PLAYER_BIND INGAME_MENU 0

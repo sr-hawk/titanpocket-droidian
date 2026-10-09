@@ -34,3 +34,7 @@ The previous image lacked later toolkit, shell, compositor, brightness, accelero
 - Fresh installation, storage growth, first/second boot, graphical behavior, and games on **this exact candidate** remain untested.
 
 `COMPONENTS.json` records the bundled custom payload hashes. `MANIFEST.json` and `SHA256SUMS` identify the image pair. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) before publication.
+
+## Development changes after current-02
+
+[Pocket Armagetron controls](ARMAGETRON-CONTROLS.md) are installed on the development phone and saved in the staged game payload. They are pending the next image rebuild and are not part of the current-02 image checksums.

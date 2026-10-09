@@ -13,6 +13,8 @@ The updated `titan-pocket-current-02` candidate is staged locally. Nothing has b
 
 ## Still required before public binary distribution
 
+- Incorporate the staged [Pocket Armagetron controls](ARMAGETRON-CONTROLS.md) into the next image and refresh component hashes, image checksums, and validation. The current-02 image predates these controls.
+
 - Fresh-install **this exact image pair** on the supported baseline and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, and games. The existing phone has not been reflashed during preparation.
 - Assemble matching corresponding source, local modifications, build instructions, and upstream license notices for the distributed components. This repository currently contains release metadata/documentation, not a complete source release or reproducible build environment. No blanket license is assigned to the combined image.
 - Record the successfully tested SP Flash Tool version, Download Agent provenance/hash, and connection sequence. The install guide currently requires an already established Pocket setup.
