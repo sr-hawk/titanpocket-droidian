@@ -13,7 +13,7 @@ The current local custom binaries/configuration were compared with the running d
 | Fingerprint | Unlock has worked on the development phone; stock-identity integration included. This candidate still starts unlocked and includes no personal enrollment. |
 | Audio | Speaker/volume keys working on the development phone; smart-amplifier permissions and PulseAudio changes included. Other routes untested. |
 | Brightness | Commit-pulse workaround included. Slider curve/range still needs tuning. |
-| Sensors and games | Accelerometer startup, tilt service, and game-triggered GPU boost included. Extreme Tux Racer with GLES/Wayland and tilt work included. Armagetron is experimental: the phone dependency check found missing GLU; this candidate adds it, but the game needs a new runtime test. |
+| Sensors and games | Accelerometer startup, tilt service, and game-triggered GPU boost included. Extreme Tux Racer with GLES/Wayland and tilt work included. Armagetron now launches after installing its missing GLU library. Desktop-entry launch, clean-profile first-run setup, and local-match rendering were verified on the development phone. Long sessions and multiplayer remain untested. |
 | Terminal and UI demos | Custom Xfce terminal and GTK/libadwaita gallery applications included. |
 | Battery and CPU | Reporting works; VT and USB CPU-spin fixes retained. Game boost can increase heat and power use. Suspend, wake, and idle drain need testing. |
 | Wi-Fi | Scanning observed previously; connection, sustained transfer, and suspend/reconnect need confirmation. |

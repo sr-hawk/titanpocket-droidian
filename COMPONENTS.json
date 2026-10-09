@@ -179,5 +179,18 @@
       "sha256": "8cd50686736694ddd1d53c0a31ef9a2f84516ebb55e1c85fb03712993b061237",
       "installation": "filesystem overlay"
     }
-  ]
+  ],
+  "component_runtime_checks": {
+    "armagetron": {
+      "tested_on_development_phone": true,
+      "missing_library_fixed": "libGLU.so.1",
+      "desktop_entry_launch_verified": true,
+      "clean_profile_setup_verified": true,
+      "local_match_rendering_verified": true,
+      "library_matches_bundled_release": true,
+      "long_session_tested": false,
+      "multiplayer_tested": false,
+      "fresh_image_boot_tested": false
+    }
+  }
 }
