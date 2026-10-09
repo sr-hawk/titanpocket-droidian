@@ -1,6 +1,6 @@
 # Privacy audit
 
-The `titan-pocket-current-02` candidate was prepared October 9, 2026 from a pristine-rootfs-based development build. It is not a dump of a phone’s live user data.
+The `titan-pocket-current-03` candidate was prepared October 9, 2026 from a pristine-rootfs-based development build. It is not a dump of a phone’s live user data.
 
 ## Removed or reset
 

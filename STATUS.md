@@ -1,6 +1,6 @@
 # Current status
 
-Updated October 9, 2026 for `titan-pocket-current-02`.
+Updated October 9, 2026 for `titan-pocket-current-03`.
 
 The current local custom binaries/configuration were compared with the running development phone before packaging. The release uses a clean, pristine-rootfs-based filesystem, not a clone of personal phone data. **Component matches and offline image checks do not establish that this exact image boots. A fresh flash test remains outstanding.**
 
@@ -14,7 +14,7 @@ The current local custom binaries/configuration were compared with the running d
 | Audio | Speaker/volume keys working on the development phone; smart-amplifier permissions and PulseAudio changes included. Other routes untested. |
 | Brightness | Commit-pulse workaround included. Slider curve/range still needs tuning. |
 | Sensors and games | Accelerometer startup, tilt service, and game-triggered GPU boost included. Extreme Tux Racer with GLES/Wayland and tilt work included. Armagetron now launches after installing its missing GLU library. Desktop-entry launch, clean-profile first-run setup, and local-match rendering were verified on the development phone. Long sessions and multiplayer remain untested. |
-| Terminal and UI demos | Custom Xfce terminal and GTK/libadwaita gallery applications included. |
+| Terminal and app selection | Custom Xfce terminal included. Development galleries removed. Extra Console, terminal settings, Thunar preferences, and Bulk Rename launchers hidden; in-app functionality retained. |
 | Battery and CPU | Reporting works; VT and USB CPU-spin fixes retained. Game boost can increase heat and power use. Suspend, wake, and idle drain need testing. |
 | Wi-Fi | Scanning observed previously; connection, sustained transfer, and suspend/reconnect need confirmation. |
 | Bluetooth | Not working. |
@@ -35,10 +35,8 @@ The previous image lacked later toolkit, shell, compositor, brightness, accelero
 
 `COMPONENTS.json` records the bundled custom payload hashes. `MANIFEST.json` and `SHA256SUMS` identify the image pair. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) before publication.
 
-## Development changes after current-02
+## Included in current-03
 
-[Pocket Armagetron controls](ARMAGETRON-CONTROLS.md) are installed on the development phone and saved in the staged game payload. They are pending the next image rebuild and are not part of the current-02 image checksums.
+[Pocket Armagetron controls](ARMAGETRON-CONTROLS.md) and [native Wayland GPU acceleration](ARMAGETRON-PERFORMANCE.md) are now included. The development phone measured a median 60.0 FPS with GPU rendering at 720 × 720, compared with 35.5 FPS in software. These are development-phone measurements, not results from a fresh flash of this image.
 
-[Armagetron GPU acceleration](ARMAGETRON-PERFORMANCE.md) is also installed on the development phone and staged for the next image. Measured local-match frame rates improved from a median 35.5 FPS in software to 60.0 FPS with GPU rendering at 720 × 720. Current-02 predates this change.
-
-The next image applies the [experimental release profile](release-profile/README.md): keep unlocked startup and default accounts; omit both development galleries; hide the extra Console, terminal settings, Thunar preferences, and Bulk Rename launchers. Applications and in-app settings remain available. Current-02 has not been rebuilt.
+The [experimental release profile](release-profile/README.md) keeps unlocked startup and pristine default accounts, omits both development galleries, and hides redundant launchers. No first-boot password wizard is added. SSH remains disabled.

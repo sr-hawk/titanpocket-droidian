@@ -1,6 +1,6 @@
 # Armagetron on the Titan Pocket
 
-These controls are installed and tested on the development phone and saved in the game sources and staged payload. **They are not yet in the current-02 flash image. Rebuild the image before advertising these as included.**
+These controls are included in the current-03 flash image and have been tested on the development phone. This exact image still needs a fresh-flash test.
 
 | Key | Action |
 | --- | --- |

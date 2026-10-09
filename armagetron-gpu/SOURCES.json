@@ -9,5 +9,6 @@
     "source_archive_sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
     "patch": "sdl12-pocket-gles.patch"
   },
-  "pending_image_rebuild": true
+  "pending_image_rebuild": false,
+  "included_in": "titan-pocket-current-03"
 }

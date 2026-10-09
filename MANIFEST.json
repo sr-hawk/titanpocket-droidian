@@ -1,7 +1,7 @@
 {
-  "build": "titan-pocket-current-02",
+  "build": "titan-pocket-current-03",
   "date": "2026-10-09",
-  "base": "privacy-cleaned pristine-rootfs build with current custom functionality",
+  "base": "privacy-cleaned rootfs with current Pocket controls, GPU game runtime, and release app selection",
   "firmware_baseline": "2023010520",
   "mode": "Download Only",
   "selected_partitions": [
@@ -16,8 +16,8 @@
     },
     {
       "file": "userdata.img",
-      "bytes": 4069963692,
-      "sha256": "bd4238a19745841900e51fa20fd813529c15c409971181079a27d979b0d17796"
+      "bytes": 4071630708,
+      "sha256": "039afbd8fdefabb2ed97cda47bb1f7afd72a8c961fa8c2bf4b6770ddb3187170"
     },
     {
       "file": "MT6771_Android_scatter.txt",
@@ -31,23 +31,33 @@
     "ext4_consistency_checked": true,
     "outer_metadata_and_reservation_verified": true,
     "expanded_bytes": 10737418240,
-    "expanded_sha256": "760650287ccccad1fa63732dc700cc17c4d051d6e58204fac45179e05445ddad",
-    "expanded_crc32": "d7aa66cc",
+    "expanded_sha256": "4310b7244dc32475afb50c5f92a7ad25aa7e344a5084da3e0de7148a1476a64f",
+    "expanded_crc32": "cd5c04f5",
     "chunk_counts": {
-      "0xcac1": 184,
-      "0xcac2": 239
+      "0xcac1": 182,
+      "0xcac2": 237
     },
     "aosp_decode_passed": true,
-    "rootfs_sha256": "e21ab9c6dad863c93671aeced6c37be182ee435d77d672ed58fcbd6f598d3768",
+    "rootfs_sha256": "fe8590c9cba81fa98fd10698ffffbf4dddce576176d3edec206938eba5ae42b0",
     "nested_rootfs_verified": true,
     "runtime_tested": false,
-    "dependency_objects_checked": 219,
+    "dependency_objects_checked": 221,
     "installer_preflight_tests_passed": 5,
-    "overlay_payloads_verified": 1237,
+    "overlay_payloads_verified": 1243,
     "offline_package_count": 376,
-    "unlisted_packages_removed": 6,
+    "unlisted_packages_removed": 0,
     "unprotected_package_overwrites": 0,
-    "offline_package_dependencies_satisfied": true
+    "offline_package_dependencies_satisfied": true,
+    "release_profile": {
+      "gallery_files_absent": true,
+      "launcher_overrides_verified": true,
+      "home_files_match_pristine": true,
+      "home_files_checked": 10,
+      "account_databases_match_pristine": true,
+      "passwordless_desktop_configuration_unchanged": true,
+      "latest_game_payloads_verified": true,
+      "boot_and_scatter_unchanged": true
+    }
   },
   "runtime_tested": false,
   "privacy": {

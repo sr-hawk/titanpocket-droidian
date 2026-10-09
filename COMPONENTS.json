@@ -1,5 +1,5 @@
 {
-  "build": "titan-pocket-current-02",
+  "build": "titan-pocket-current-03",
   "date": "2026-10-09",
   "scope": "Key custom release payloads; hashes describe cleaned release bytes, not personal device state.",
   "runtime_tested": false,
@@ -151,7 +151,7 @@
     },
     {
       "path": "/opt/armagetron/bin/armagetronad",
-      "sha256": "b1d8a94de73f61ce21961146a45d336c09d9fd90959290c6905d697bf84b6807",
+      "sha256": "7a15b1eb9a5d2c3480a643c8895183bcd8cc09f6594bd59396103a349ad9713e",
       "installation": "filesystem overlay"
     },
     {
@@ -178,6 +178,51 @@
       "path": "/usr/share/glib-2.0/schemas/90-pocket-desktop.gschema.override",
       "sha256": "8cd50686736694ddd1d53c0a31ef9a2f84516ebb55e1c85fb03712993b061237",
       "installation": "filesystem overlay"
+    },
+    {
+      "path": "/opt/armagetron/bin/armagetronad-pocket",
+      "sha256": "ff705512cf4ea7c495b5645727bffc90bf901a8685df10975ef826cd6f0821fb",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/opt/armagetron/lib/gl4es/libGL.so.1",
+      "sha256": "17b147c9714b9bec1309634d6ed1e93f904e9109a955af0613f8b66e20b13e93",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/opt/armagetron/lib/gl4es/libSDL-1.2.so.0",
+      "sha256": "42d0e7053a7c3c2a0e908b5879f86c2ddb22fc36ecee490a8a00751de1288e45",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/opt/armagetron/etc/armagetronad/keys_pocket.cfg",
+      "sha256": "618e5a12b8816b1592143b0aa1656ad508a3bcab11a7a4f2444de29fba58883d",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/share/applications/armagetronad.desktop",
+      "sha256": "4840c296385d68427c1f74f506aff79a7ef39141cc78b9663d89ab7b0d06179d",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/local/share/applications/org.gnome.Console.desktop",
+      "sha256": "6967f11c6347cb8fc6873c65a25d96debaf99f468854eb05ab341c0ef19013db",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/local/share/applications/thunar-bulk-rename.desktop",
+      "sha256": "b512021c3fc2936aa5baae9677bcc7967a4735270be8a455232382682935e56f",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/local/share/applications/thunar-settings.desktop",
+      "sha256": "3150e2528b24159b76e83ec0731a30254d29e7fe6d3b7d5ef450e5f563254f3e",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/local/share/applications/xfce4-terminal-settings.desktop",
+      "sha256": "4fec7bbc177a963cc0ab1237c6ffbfb288f8caabef6ff3b2e86177f675cd1b74",
+      "installation": "filesystem overlay"
     }
   ],
   "component_runtime_checks": {
@@ -190,7 +235,11 @@
       "library_matches_bundled_release": true,
       "long_session_tested": false,
       "multiplayer_tested": false,
-      "fresh_image_boot_tested": false
+      "fresh_image_boot_tested": false,
+      "pocket_controls_verified": true,
+      "native_wayland_gpu_verified": true,
+      "gpu_renderer": "ARM Mali-G72 MP3",
+      "development_phone_median_fps": 60.0
     }
   }
 }

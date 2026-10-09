@@ -1,4 +1,4 @@
-EXPERIMENTAL CANDIDATE: titan-pocket-current-02. Not fresh-flash/boot tested.
+EXPERIMENTAL CANDIDATE: titan-pocket-current-03. Not fresh-flash/boot tested.
 READ INSTALL.md FIRST. FLASHING ERASES USERDATA.
 Wrong settings can destroy device-specific modem data or brick the phone.
 Titan Pocket, stock 2023010520, unlocked bootloader, original partition layout only.
