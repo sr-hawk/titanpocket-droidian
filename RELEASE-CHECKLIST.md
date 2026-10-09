@@ -11,13 +11,13 @@ The updated `titan-pocket-current-03` candidate is staged locally. Nothing has b
 - Dependency-presence audit, installer preflight regression checks, filesystem and sparse-image verification.
 - Privacy cleanup repeated; maintainer SSH keys removed and SSH disabled in both boot stages.
 - Simple feature/status guide, installation instructions, major SP Flash Tool risks, component hashes, and image checksums.
-- Separate Git history with a neutral project identity; no remote or developer history.
+- Separate Git history with a neutral project identity; no developer history; the origin now points to the existing project repository.
 
 ## Still required before public binary distribution
 
 - Fresh-install **this exact image pair** on the supported baseline and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, and games. The existing phone has not been reflashed during preparation.
-- Assemble matching corresponding source, local modifications, build instructions, and upstream license notices for the distributed components. This repository currently contains release metadata/documentation, not a complete source release or reproducible build environment. No blanket license is assigned to the combined image.
-- Record the successfully tested SP Flash Tool version, Download Agent provenance/hash, and connection sequence. The install guide currently requires an already established Pocket setup.
+- Assemble matching corresponding source, local modifications, build instructions, and upstream license notices for the distributed components. This repository currently contains release metadata/documentation, not a complete source release or reproducible build environment. No blanket license is assigned to the combined image. See LICENSING.md for the scoped MIT grant and upstream obligations. Also resolve redistribution permission for embedded vendor/firmware binaries.
+- Record the successfully tested SP Flash Tool version, Download Agent provenance/hash, and connection sequence without distributing or linking tool/DA downloads. The install guide currently requires an already established Pocket setup.
 - Add the actual download URL only after publication; use the host’s supported attachment size/splitting procedure for the multi-gigabyte userdata image.
 
 ## Public file boundary

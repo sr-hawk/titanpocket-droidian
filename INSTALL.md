@@ -10,14 +10,13 @@
 4. **Interrupted writes.** A USB disconnect, power failure, or host crash during flashing can leave a partially written phone that will not boot. Use a charged phone, reliable cable, and stable host power.
 5. **An experimental, unlocked system.** Cellular and emergency calling are untested, suspend/battery behavior is uncertain, and the desktop starts unlocked. Do not rely on it as your only phone or use it for sensitive personal data.
 
-The general Format All/IMEI warning is also documented in [FuriLabs’ manufacturer flashing guide](https://furilabs.com/flash-guide/). That guide is for different hardware: **do not use its firmware, Download Agent, or upgrade procedure on a Titan Pocket**.
 
 ## Supported starting point
 
 - **Unihertz Titan Pocket only**, stock firmware **2023010520**, kernel **4.14.186-g40b2a1864-dirty**, and an **unlocked bootloader**.
 - The original stock partition layout and vendor stack must still be present. Other Titan models, other firmware versions, and repartitioned devices are not validated.
 - Backups stored off the phone, matching stock firmware, and a recovery procedure already established for your own phone. Do not assume that a stock archive restores device-specific data.
-- SP Flash Tool and a Download Agent already known to work with your Pocket. Unlocking, choosing an initial DA, and recovering an unknown device are outside this guide. No DA is supplied or endorsed by this package.
+- SP Flash Tool and a Download Agent already known to work with your Pocket. Unlocking, choosing an initial DA, and recovering an unknown device are outside this guide. Neither SP Flash Tool nor a Download Agent is supplied, mirrored, endorsed, or linked for download by this project.
 
 ## Flash the candidate
 

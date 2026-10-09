@@ -46,3 +46,5 @@ Please report the build name, stock firmware version, steps to reproduce, and ex
 Built on Droidian, Phosh, Phoc, wlroots, GTK, libhandy, libadwaita, and the stock Unihertz kernel/vendor stack, with the Ubuntu Touch supplemental VT module work. This is an unofficial community experiment; components retain their respective licenses.
 
 Images are local release attachments, excluded from Git. No download has been published yet. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) for remaining publication work.
+
+Original project documentation and the independent game launcher use MIT. Upstream components and modifications retain their applicable licenses; the image is not MIT-licensed as a whole. See [LICENSING.md](LICENSING.md). SP Flash Tool and Download Agent downloads are not provided or linked.
