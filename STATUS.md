@@ -38,3 +38,5 @@ The previous image lacked later toolkit, shell, compositor, brightness, accelero
 ## Development changes after current-02
 
 [Pocket Armagetron controls](ARMAGETRON-CONTROLS.md) are installed on the development phone and saved in the staged game payload. They are pending the next image rebuild and are not part of the current-02 image checksums.
+
+[Armagetron GPU acceleration](ARMAGETRON-PERFORMANCE.md) is also installed on the development phone and staged for the next image. Measured local-match frame rates improved from a median 35.5 FPS in software to 60.0 FPS with GPU rendering at 720 × 720. Current-02 predates this change.

@@ -1,0 +1,22 @@
+#!/bin/sh
+# Private GLES translation and SDL adapter for the Titan Pocket.
+# Set POCKET_SOFTWARE_GL=1 for the original X11/software-rendering fallback.
+if [ "${POCKET_SOFTWARE_GL:-0}" = 1 ]; then
+    exec env SDL_VIDEODRIVER=x11 /opt/armagetron/bin/armagetronad "$@"
+fi
+export LD_LIBRARY_PATH=/opt/armagetron/lib/gl4es
+export POCKET_GL4ES=1
+export SDL_VIDEODRIVER=wayland
+export SDL_VIDEO_WAYLAND_ALLOW_LIBDECOR=0
+export SDL12COMPAT_OPENGL_SCALING=0
+export SDL12COMPAT_SYNC_TO_VBLANK=1
+export SDL_OPENGL_ES_DRIVER=1
+export SDL_VIDEO_GL_DRIVER=/usr/lib/aarch64-linux-gnu/libGLESv2.so.2
+export HYBRIS_EGL_PLATFORM=wayland
+export LIBGL_EGL=/usr/lib/aarch64-linux-gnu/libEGL.so.1
+export LIBGL_GLES=/usr/lib/aarch64-linux-gnu/libGLESv2.so.2
+export LIBGL_ES=2
+# SDL creates the native context; do not probe a separate X11 context first.
+export LIBGL_NOTEST=1
+export LIBGL_DEEPBIND=0
+exec /opt/armagetron/bin/armagetronad "$@"

@@ -1,0 +1,6 @@
+{
+  "opt/armagetron/lib/gl4es/libGL.so.1": "17b147c9714b9bec1309634d6ed1e93f904e9109a955af0613f8b66e20b13e93",
+  "opt/armagetron/lib/gl4es/libSDL-1.2.so.0": "42d0e7053a7c3c2a0e908b5879f86c2ddb22fc36ecee490a8a00751de1288e45",
+  "opt/armagetron/bin/armagetronad-pocket": "ff705512cf4ea7c495b5645727bffc90bf901a8685df10975ef826cd6f0821fb",
+  "usr/share/applications/armagetronad.desktop": "d76f8e4ffa6707005d01dfef5e581c5e025bcd64fcd62431e7679950c65a0af0"
+}

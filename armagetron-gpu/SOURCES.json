@@ -1,0 +1,13 @@
+{
+  "gl4es": {
+    "upstream": "https://github.com/ptitSeb/gl4es",
+    "commit": "ec16bedd8819c475326f4f1a3063772c6d986e06",
+    "local_changes": false
+  },
+  "sdl12_compat": {
+    "version": "1.2.68",
+    "source_archive_sha256": "63c6e4dcc1154299e6f363c872900be7f3dcb3e42b9f8f57e05442ec3d89d02d",
+    "patch": "sdl12-pocket-gles.patch"
+  },
+  "pending_image_rebuild": true
+}

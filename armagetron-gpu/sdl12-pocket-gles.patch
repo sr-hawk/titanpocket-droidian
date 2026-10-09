@@ -1,0 +1,44 @@
+--- a/src/SDL12_compat.c
++++ b/src/SDL12_compat.c
+@@ -6222,6 +6222,12 @@
+             SDL20_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, OpenGLLogicalScalingSamples);
+         }
+ 
++        /* Private Pocket GL4ES path: native Wayland GLES2 context. */
++        if ((flags12 & SDL12_OPENGL) && SDL20_getenv("POCKET_GL4ES")) {
++            SDL20_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
++            SDL20_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
++            SDL20_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
++        }
+         VideoWindow20 = SDL20_CreateWindow(WindowTitle, x, y, scaled_width, scaled_height, flags20);
+         if (!VideoWindow20) {
+             return EndVidModeCreate();
+@@ -6271,6 +6277,9 @@
+                 return EndVidModeCreate();
+             }
+             LoadOpenGLFunctions();
++            if (SDL20_getenv("POCKET_GL4ES")) {
++                SDL20_Log("Pocket GLES renderer: %s / %s", OpenGLFuncs.glGetString(GL_VENDOR), OpenGLFuncs.glGetString(GL_RENDERER));
++            }
+         }
+ 
+         VideoSurface12->flags |= SDL12_OPENGL;
+@@ -7942,6 +7951,18 @@
+ DECLSPEC12 void SDLCALL
+ SDL_GL_SwapBuffers(void)
+ {
++    /* Optional diagnostics; counts submitted frames over five-second windows. */
++    static Uint32 pocket_start, pocket_frames;
++    if (VideoWindow20 && SDL20_getenv("POCKET_FPS")) {
++        Uint32 now = SDL20_GetTicks();
++        if (!pocket_start) pocket_start = now;
++        ++pocket_frames;
++        if (now - pocket_start >= 5000) {
++            SDL20_Log("Pocket frame rate: %.1f FPS", pocket_frames * 1000.0 / (now - pocket_start));
++            pocket_frames = 0;
++            pocket_start = now;
++        }
++    }
+     if (VideoWindow20) {
+         /* Some applications, e.g. Awesomenauts, play with glXMakeCurrent() behind our backs and break SwapBuffers() */
+         if (ForceGLSwapBufferContext) {
