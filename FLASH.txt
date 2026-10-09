@@ -1,0 +1,8 @@
+Experimental privacy-cleaned build; not boot-tested.
+Read README.md and PRIVACY-REPORT.md first.
+SP Flash Tool: Download Only. Select ONLY boot and userdata with this scatter.
+Installing erases userdata and personal files. Keep your established stock recovery route.
+Use your known-working Download Agent for this device and firmware baseline.
+Do not use Format All or Firmware Upgrade. Stop on a partition-layout mismatch.
+First boot expands storage and installs bundled packages before starting Phosh.
+SSH is disabled in early boot and the real root. Phosh still starts unlocked.

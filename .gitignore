@@ -1,0 +1,12 @@
+# Public release allowlist. Everything else, including images, is ignored.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/STATUS.md
+!/PRIVACY-REPORT.md
+!/RELEASE-CHECKLIST.md
+!/FLASH.txt
+!/MANIFEST.json
+!/SHA256SUMS
+!/MT6771_Android_scatter.txt
