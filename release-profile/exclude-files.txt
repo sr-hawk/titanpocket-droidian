@@ -1,0 +1,5 @@
+# Release-only exclusions; keep development source files.
+usr/local/bin/pocket-gallery
+usr/local/bin/pocket-gallery-adw
+usr/share/applications/org.titanpocket.Gallery.desktop
+usr/share/applications/org.titanpocket.GalleryAdw.desktop

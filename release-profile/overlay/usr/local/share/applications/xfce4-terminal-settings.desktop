@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Xfce Terminal Settings
+Exec=xfce4-terminal --preferences
+NoDisplay=true

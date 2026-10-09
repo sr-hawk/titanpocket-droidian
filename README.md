@@ -15,7 +15,7 @@ A Linux phone experiment built around the Pocket’s physical keyboard and squar
 - Use the speaker, volume keys, battery reporting, and a brightness workaround.
 - Use the included accelerometer/tilt support and experimental game builds.
 
-Fingerprint unlock has worked on the development phone, but this lab build **starts the desktop unlocked**. SSH is disabled and maintainer keys are removed. Default Droidian accounts remain; this is not a hardened personal phone image.
+Fingerprint unlock has worked on the development phone, but this lab build **starts the desktop unlocked**. The passwordless desktop start and default accounts are intentional for this experimental release; owners may change passwords and screen locking themselves. SSH is disabled and maintainer keys are removed. Default Droidian accounts remain; this is not a hardened personal phone image.
 
 ## What it cannot promise yet
 
