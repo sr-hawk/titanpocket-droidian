@@ -18,4 +18,4 @@ The launcher disables libdecor because its missing-plugin fallback stalled windo
 
 Set `POCKET_FPS=1` when launching to log submitted frames over five-second intervals. This is not a measurement of panel refresh or input latency. Set `POCKET_SOFTWARE_GL=1` when invoking the launcher for the original X11/software path. User control bindings are shared by both paths.
 
-This runtime is included in current-06. Fresh-install, long-session, thermal/battery, and multiplayer validation remain outstanding.
+This runtime is included in current-07. Fresh-install, long-session, thermal/battery, and multiplayer validation remain outstanding.

@@ -1,10 +1,10 @@
 # Before publishing
 
-The updated `titan-pocket-current-06` candidate is staged locally. Nothing has been uploaded.
+The updated `titan-pocket-current-07` candidate is staged locally. Nothing has been uploaded.
 
 ## Completed
 
-- Current-06 includes Pocket Armagetron controls, native Wayland GPU runtime, and the selected release app cleanup.
+- Current-07 includes Pocket Armagetron controls, native Wayland GPU runtime, and the selected release app cleanup.
 
 - Current custom files compared with saved hashes of the personal phone and later game-deployment records.
 - Updated payloads assembled into a clean image; Pocket components installed at their final runtime paths.
@@ -15,7 +15,7 @@ The updated `titan-pocket-current-06` candidate is staged locally. Nothing has b
 
 ## Still required before public binary distribution
 
-- Fresh-flash current-06 and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, games, and Pocket Tour. The successful user-reported test applies to current-03; current-05 subsequently failed to reach the desktop.
+- Fresh-flash current-07 and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, games, and Pocket Tour. The owner reports a working full flash of current-06. Check the repaired Armagetron icon, both welcome messages, menu help and in-game controls tips in current-07.
 - Assemble matching corresponding source, local modifications, build instructions, and upstream license notices for the distributed components. This repository currently contains release metadata/documentation, not a complete source release or reproducible build environment. No blanket license is assigned to the combined image. See LICENSING.md for the scoped MIT grant and upstream obligations. Also resolve redistribution permission for embedded vendor/firmware binaries.
 - Record the successfully tested SP Flash Tool version, Download Agent provenance/hash, and connection sequence without distributing or linking tool/DA downloads. The install guide currently requires an already established Pocket setup.
 - Add the actual download URL only after publication; use the host’s supported attachment size/splitting procedure for the multi-gigabyte userdata image.
@@ -28,7 +28,7 @@ Run `sha256sum -c SHA256SUMS` beside the images and scatter. Checksums identify 
 
 ## Pocket Tour included
 
-- The replacement tour, content, launcher, and first-run service override are included in current-06. Host layout checks passed; physical-phone testing remains pending.
+- The replacement tour, content, launcher, and first-run service override are included in current-07. Host layout checks passed; physical-phone testing remains pending.
 
 ## Required full-flash regression checks
 

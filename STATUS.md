@@ -1,8 +1,8 @@
 # Current status
 
-Updated October 10, 2026 for `titan-pocket-current-06`.
+Updated October 10, 2026 for `titan-pocket-current-07`.
 
-The recovered October 9 personal component baseline is used, with the approved privacy cleanup, gallery/launcher cleanup and Pocket Tour replacement. The original personal Phosh is retained. Packages and custom components are installed at their active paths during assembly. First boot only adds storage expansion to normal Droidian startup. This exact image has not yet passed a full-flash test.
+The recovered October 9 personal component baseline is used, with the approved privacy cleanup, gallery/launcher cleanup and Pocket Tour replacement. The original personal Phosh is retained. Packages and custom components are installed at their active paths during assembly. First boot only adds storage expansion to normal Droidian startup. The owner reports that current-06 works after a full flash. Current-07 changes only Armagetron launcher/help data and build metadata; its visual acceptance test is pending.
 
 | Area | Development-phone evidence and included functionality |
 | --- | --- |
@@ -31,14 +31,18 @@ The 376 bundled packages are installed and configured on the build computer unde
 - The saved October 9 phone hashes and later game-deployment records identify the recovered personal baseline. This is an offline comparison, not a new test of the phone.
 - Native payload inventory, ELF dependency-presence audit, offline package dependency/conflict checks, completed offline installation and package-state validation, image file/link/mode readback, ext4 checks, sparse expansion, and nested-root verification.
 - Privacy checks repeated after updates; SSH remains disabled in both boot stages.
-- Current-03 installation/boot success is user-reported. Current-06 still needs a fresh flash/boot test, storage-growth and second-boot checks, and individual hardware/game checks.
+- Current-06 full-flash/boot success is user-reported. Its reported defects were the Armagetron icon and desktop-oriented help. Current-07 needs its own full-flash check; individual hardware tests are not implied by the general success report.
 
 `COMPONENTS.json` records the active custom-file hashes. `MANIFEST.json` and `SHA256SUMS` identify the image pair. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) before publication.
 
-## Included in current-06
+## Included in current-07
 
 The recovered personal Pocket shell, compositor, toolkits, keyboard/pad controls, brightness/audio integration, and later Armagetron controls/GPU runtime are installed before flashing. The desktop remains unlocked at startup, with default Droidian user accounts and disabled SSH. Development galleries are omitted and redundant launchers hidden.
 
 Pocket Tour replaces the original executable, application launcher, and first-run command; installed package diversions protect those paths. Its setup page describes storage expansion only. No Pocket first-boot package installer, activation dependency, or conversion bundle remains in the image.
 
-The previous current-05 failed to reach the desktop in the owner's full-flash test. It is superseded. Current-06 restores the personal Phosh binary rather than the additional current-05 drag-mode patch. Physical Home and unwanted swipe behavior must be checked during the full-flash test; source comparison alone cannot certify them.
+The previous current-05 failed to reach the desktop in the owner's full-flash test. It is superseded. Current-07 restores the personal Phosh binary rather than the additional current-05 drag-mode patch. Physical Home and unwanted swipe behavior must be checked during the full-flash test; source comparison alone cannot certify them.
+
+## Armagetron presentation fix in current-07
+
+The launcher now references the shipped icon. Thirty-three English language entries cover the Pocket introduction, setup, menu navigation and control tips. No game executable, key bindings, GPU libraries, Pocket shell or storage behavior changed from the working current-06 image. The current-06 archive is retained.

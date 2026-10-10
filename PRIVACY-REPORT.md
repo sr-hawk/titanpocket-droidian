@@ -1,6 +1,6 @@
 # Privacy audit
 
-The `titan-pocket-current-06` candidate was prepared October 10, 2026 using a sanitized filesystem with packages and the recovered personal Pocket components installed during assembly. It is not a dump of a phone’s live user data.
+The `titan-pocket-current-07` candidate was prepared October 10, 2026 using a sanitized filesystem with packages and the recovered personal Pocket components installed during assembly. It is not a dump of a phone’s live user data.
 
 ## Removed or reset
 
@@ -27,4 +27,4 @@ The current functionality update was assembled from local system payloads. No li
 
 This audit covers the identified candidate images and the allowlisted public repository files. It does not cover other development images, source checkouts, or private working folders. Git history is new and uses a neutral project identity; no development history, credentials, private keys, personal contact details, or workstation paths were copied into it.
 
-A tester reported a successful installation and boot of the preceding current-03 on October 9, 2026. Current-06 has passed offline privacy checks but still needs its own flash/boot test. It still starts Phosh unlocked and retains default Droidian accounts. Privacy cleanup is not a claim that the image is hardened for sensitive data or everyday phone use.
+The owner reported a successful full flash and boot of current-06 on October 10, 2026. Current-07 has passed offline privacy checks but still needs its own flash/boot test. It still starts Phosh unlocked and retains default Droidian accounts. Privacy cleanup is not a claim that the image is hardened for sensitive data or everyday phone use.

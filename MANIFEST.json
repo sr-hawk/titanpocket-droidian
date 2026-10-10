@@ -1,56 +1,17 @@
 {
+  "date": "2026-10-10",
   "firmware_baseline": "2023010520",
   "mode": "Download Only",
   "selected_partitions": [
     "boot",
     "userdata"
   ],
-  "build": "titan-pocket-current-06",
-  "date": "2026-10-10",
-  "base": "Recovered personal Pocket components; package installation and configuration completed during image assembly",
-  "runtime_tested": false,
   "first_boot": {
     "extra_setup": "storage expansion only",
     "packages_already_configured": true,
     "pocket_components_already_active": true,
     "home_prepopulated": true,
     "runtime_installer_included": false
-  },
-  "validation": {
-    "kernel_and_dtb_unchanged": true,
-    "unchanged_boot_avb_verification_retained": true,
-    "ext4_consistency_checked": true,
-    "expanded_bytes": 10737418240,
-    "expanded_sha256": "d6e7d4c9518388fae1080cc6c4a845d28a4a886eb2de841eee91ca513938c3e2",
-    "expanded_crc32": "e651f78b",
-    "chunk_counts": {
-      "0xcac1": 218,
-      "0xcac2": 260
-    },
-    "aosp_decode_passed": true,
-    "rootfs_sha256": "34401aeb8c09fdb2b5bdc8dd18b06c0a41d7ec546441e79985091486f845d598",
-    "nested_rootfs_verified": true,
-    "runtime_tested": false,
-    "bundled_packages_configured": 376,
-    "total_installed_package_records": 1665,
-    "dpkg_audit_empty": true,
-    "core_linker_dependencies_resolved": true,
-    "gtk3_import_passed": true,
-    "schema_available": true,
-    "performed_during_image_assembly": true,
-    "changed_entries_metadata_verified": 24474,
-    "changed_regular_file_hashes_verified": 19962,
-    "outer_metadata_and_reservation_verified": true,
-    "default_home_prepopulated": true,
-    "home_regular_files_match_pristine": 9,
-    "storage_script_matches_tested_candidate": true,
-    "scatter_selected_partitions": [
-      "boot",
-      "userdata"
-    ],
-    "personal_baseline_paths_accounted_for": 181,
-    "storage_host_tests_passed": 5,
-    "active_component_readback_verified": true
   },
   "privacy": {
     "masked_services": [
@@ -70,6 +31,78 @@
     "phosh_starts_unlocked": true,
     "default_login_records_preserved": true
   },
+  "build": "titan-pocket-current-07",
+  "base": "User-tested current-06 installed system; three data files updated for Armagetron icon/help and build identity",
+  "runtime_tested": false,
+  "base_runtime_report": {
+    "build": "titan-pocket-current-06",
+    "source": "user report on 2026-10-10",
+    "full_flash_and_boot_reported_working": true,
+    "known_issues": [
+      "Armagetron launcher icon missing",
+      "Armagetron introduction and controls help still use desktop text"
+    ],
+    "individual_hardware_checks_not_claimed": true
+  },
+  "validation": {
+    "expanded_bytes": 10737418240,
+    "expanded_sha256": "abf6b726918b1e3a99d365ccbe68c7a416e120d331d23bf2befa7dbc6c840493",
+    "expanded_crc32": "45c1ab60",
+    "chunk_counts": {
+      "0xcac1": 218,
+      "0xcac2": 260
+    },
+    "aosp_decode_passed": true,
+    "rootfs_sha256": "3e1ba5f8d18bff3100386bf59ee0c9dc7d681a6388db7367c151cd40ad0b2a5b",
+    "nested_rootfs_verified": true,
+    "runtime_tested": false,
+    "personal_paths_verified": 181,
+    "active_files_match_assembled_root": true,
+    "package_database_and_diversions_verified": true,
+    "runtime_installer_and_bundles_absent": true,
+    "home_and_security_metadata_verified": true,
+    "default_login_records_preserved": true,
+    "ssh_masks_verified": true,
+    "machine_id_blank": true,
+    "outer_metadata_and_reservation_verified": true,
+    "default_home_prepopulated": true,
+    "home_regular_files_match_pristine": 9,
+    "storage_script_matches_tested_candidate": true,
+    "scatter_selected_partitions": [
+      "boot",
+      "userdata"
+    ],
+    "armagetron_presentation": {
+      "updated_language_entries": 33,
+      "english_variant_inheritance_checked": true,
+      "tooltip_binding_placeholders_preserved": true,
+      "documented_pocket_keys_match_unchanged_preset": true,
+      "launcher_icon_exists_and_is_valid_png": true,
+      "patch_applies_to_current_06": true,
+      "runtime_tested": false,
+      "icon_readback_verified": true,
+      "icon_sha256": "3ad42021409b89b2b797024d0937f9de96636141a784fa57de6df7e92a8cbf92",
+      "desktop_file_validate_passed": true
+    },
+    "changed_files_read_back": [
+      {
+        "path": "/opt/armagetron/share/armagetronad/language/english_base.txt",
+        "sha256": "7f472438233caaf2780280dab3e3579e20c16eddbd5d1b758873a63accd034cd"
+      },
+      {
+        "path": "/usr/share/applications/armagetronad.desktop",
+        "sha256": "e3fb1b365361b75375160b5df1de50d98b247a19254284e76d46f30174e61d3f"
+      },
+      {
+        "path": "/usr/share/titan-pocket/image-build.json",
+        "sha256": "e23c9828ee38e9648130f20fbc48cd0117acbd4f76b00371e2b7fcf823c25a04"
+      }
+    ],
+    "base_package_database_and_diversions_unchanged": true,
+    "boot_and_scatter_unchanged": true,
+    "privacy_review_passed": true,
+    "full_flash_test_pending": true
+  },
   "payloads": [
     {
       "file": "boot.img",
@@ -79,7 +112,7 @@
     {
       "file": "userdata.img",
       "bytes": 4715817620,
-      "sha256": "34d51818ca45d6b1c8a935850dc3a2bc1ce9e12fbd88d8ef4e9cc2d80bfdc289"
+      "sha256": "f3d064f4a89a76cc2fd49d6f1bd57c9c4b32e8d99e9ce5eaef06d4219720563d"
     },
     {
       "file": "MT6771_Android_scatter.txt",

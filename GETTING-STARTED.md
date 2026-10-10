@@ -57,4 +57,4 @@ See [current status](STATUS.md) for the full feature list and [installation inst
 
 ## Report what you find
 
-Include the build name (**titan-pocket-current-06**), what you tried, what happened, and whether it still happens after a reboot. Remove personal information, keys, network details, and device identifiers from any logs or screenshots before sharing them.
+Include the build name (**titan-pocket-current-07**), what you tried, what happened, and whether it still happens after a reboot. Remove personal information, keys, network details, and device identifiers from any logs or screenshots before sharing them.

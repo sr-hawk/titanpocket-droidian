@@ -38,3 +38,5 @@ SP Flash Tool and Download Agent binaries are not included, mirrored, or linked 
 - [Debian copyright documentation requirements](https://www.debian.org/doc/debian-policy/ch-docs.html#copyright-information).
 
 The checked source-tree evidence includes Phosh's `debian/copyright`, GTK3's `debian/copyright`, Armagetron's `src/ui/uMenu.cpp` and `COPYING`, and the GL4ES/SDL notices included here.
+
+The Armagetron language and launcher changes in `armagetron-pocket-help.patch` modify upstream game assets and retain their applicable upstream terms; they are not covered by the documentation-only MIT grant.

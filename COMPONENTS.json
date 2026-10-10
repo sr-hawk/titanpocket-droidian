@@ -1,5 +1,5 @@
 {
-  "build": "titan-pocket-current-06",
+  "build": "titan-pocket-current-07",
   "date": "2026-10-10",
   "scope": "Key custom release payloads; hashes describe cleaned release bytes, not personal device state.",
   "runtime_tested": false,
@@ -196,7 +196,7 @@
     },
     {
       "path": "/usr/share/applications/armagetronad.desktop",
-      "sha256": "4840c296385d68427c1f74f506aff79a7ef39141cc78b9663d89ab7b0d06179d",
+      "sha256": "e3fb1b365361b75375160b5df1de50d98b247a19254284e76d46f30174e61d3f",
       "installation": "preinstalled in image"
     },
     {
@@ -253,6 +253,16 @@
       "path": "/usr/share/applications/mobi.phosh.PhoshTour.desktop",
       "sha256": "120dfd710c59c3ccd1c28246dc4df83a334a7dd78119e2e77783602a0c307e46",
       "installation": "preinstalled in image"
+    },
+    {
+      "path": "/opt/armagetron/share/armagetronad/language/english_base.txt",
+      "sha256": "7f472438233caaf2780280dab3e3579e20c16eddbd5d1b758873a63accd034cd",
+      "installation": "preinstalled in image"
+    },
+    {
+      "path": "/opt/armagetron/share/armagetronad/textures/icon.png",
+      "sha256": "3ad42021409b89b2b797024d0937f9de96636141a784fa57de6df7e92a8cbf92",
+      "installation": "preinstalled in image"
     }
   ],
   "component_runtime_checks": {
@@ -269,10 +279,16 @@
       "pocket_controls_verified": true,
       "native_wayland_gpu_verified": true,
       "gpu_renderer": "ARM Mali-G72 MP3",
-      "development_phone_median_fps": 60.0
+      "development_phone_median_fps": 60.0,
+      "presentation_fix": {
+        "icon_path_corrected": true,
+        "english_pocket_help_entries": 33,
+        "game_binary_and_bindings_unchanged": true,
+        "full_flash_visual_check_pending": true
+      }
     },
     "pocket_tour": {
-      "included_in": "titan-pocket-current-06",
+      "included_in": "titan-pocket-current-07",
       "host_layout_pages_checked": 9,
       "image_payload_and_dependencies_verified": true,
       "physical_phone_tested": false,

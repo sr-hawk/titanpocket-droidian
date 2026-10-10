@@ -1,0 +1,198 @@
+--- a/usr/share/applications/armagetronad.desktop
++++ b/usr/share/applications/armagetronad.desktop
+@@ -3,7 +3,7 @@
+ Name=Armagetron Advanced (experimental)
+ Comment=Experimental lightcycle game
+ Exec=/opt/armagetron/bin/armagetronad-pocket -f
+-Icon=/opt/armagetron/share/icons/hicolor/48x48/apps/armagetronad.png
++Icon=/opt/armagetron/share/armagetronad/textures/icon.png
+ Terminal=false
+ Categories=Game;ActionGame;
+ StartupNotify=false
+--- a/opt/armagetron/share/armagetronad/language/english_base.txt
++++ b/opt/armagetron/share/armagetronad/language/english_base.txt
+@@ -1048,7 +1048,7 @@
+ 
+ # used for listing key bindings
+ input_or                or
+-tooltip_how_to_get_rid_of Or review the input configuration in the menu "Player Setup/Player 1 Settings/Input Configuration".
++tooltip_how_to_get_rid_of	Review bindings in Player Setup > Player 1 Settings > Input Configuration. Pocket defaults: A/L turn, Space brake, C camera.
+ 
+ #********************************************
+ #********************************************
+@@ -1064,7 +1064,7 @@
+ input_screenshot_text				Screenshot
+ input_screenshot_help				Makes a screenshot and saves it as screenshot_X.bmp in the var directory
+ 
+-input_chat_tooltip                  Press \1 to chat.
++input_chat_tooltip	Pocket: T opens chat. Current binding: \1.
+ input_chat_text						Chat
+ input_chat_help						Lets you talk to other players over the network.
+ 
+@@ -1073,7 +1073,7 @@
+ input_toggle_spectator_help	        Toggles spectator mode, conveniently taking you out of the game so you can take a call (of nature, possibly) and back into the game when you're done.
+ 
+ input_score_text					Score
+-input_score_help					Shows you the score table.
++input_score_help	Show the score table. Pocket default: S.
+ 
+ input_toggle_fullscreen_text		Toggle fullscreen
+ input_toggle_fullscreen_help		Toggles windowed and fullscreen mode
+@@ -1084,12 +1084,12 @@
+ input_reload_textures_text          Reload textures
+ input_reload_textures_help          Reloads all textures. Useful for content creators.
+ 
+-input_ingame_menu_tooltip           Press \1 to access the in-game menu.
++input_ingame_menu_tooltip	Pocket: Back opens the game menu (Escape). Current binding: \1.
+ input_ingame_menu_text              In-game menu
+-input_ingame_menu_help              Triggers the in-game menu. ESC is hardcoded to this function so you don't get trapped in the game :)
++input_ingame_menu_help	Open the game menu. The Pocket Back key sends Escape.
+ 
+ input_pause_game_text               Pause game
+-input_pause_game_help               Stops the game timer or resumes it.
++input_pause_game_help	Pause or resume the game. Pocket default: P.
+ 
+ #********************************************
+ #********************************************
+@@ -1116,20 +1116,20 @@
+ #********************************************
+ #********************************************
+ 
+-input_cycle_brake_tooltip   Press \1 to brake (or activate other special functions).
++input_cycle_brake_tooltip	Pocket: hold Space to brake. Current binding: \1.
+ input_cycle_brake_text		Brake
+-input_cycle_brake_help		decreases your speed in critical situations
++input_cycle_brake_help	Hold to reduce speed. Pocket default: Space.
+ 
+ input_cycle_brake_toggle_text		Toggle Brake
+ input_cycle_brake_toggle_help		turns your brake on and off permanently without you needing to hold down a key
+ 
+-input_cycle_turn_right_tooltip	Press \1 to turn right.
++input_cycle_turn_right_tooltip	Pocket: L turns right. Current binding: \1.
+ input_cycle_turn_right_text	Turn right
+-input_cycle_turn_right_help	Makes a 90 degrees turn to the right
+-
+-input_cycle_turn_left_tooltip	Press \1 to turn left.
++input_cycle_turn_right_help	Turn right by 90 degrees. Pocket default: L.
++
++input_cycle_turn_left_tooltip	Pocket: A turns left. Current binding: \1.
+ input_cycle_turn_left_text	Turn left
+-input_cycle_turn_left_help	Makes a 90 degrees turn to the left
++input_cycle_turn_left_help	Turn left by 90 degrees. Pocket default: A.
+ 
+ 
+ #********************************************
+@@ -1164,15 +1164,15 @@
+ input_zoom_in_text		Zoom in
+ input_zoom_in_help		Reduces the field of vision and reveals more details on faraway objects.
+ 
+-input_glance_back_tooltip   Press \1 to glance back.
++input_glance_back_tooltip	Pocket: W looks behind. Current binding: \1.
+ input_glance_back_text		Glance back
+ input_glance_back_help		Turns the camera temporarily backwards.
+ 
+-input_glance_right_tooltip   Press \1 to glance right.
++input_glance_right_tooltip	Pocket: O looks right. Current binding: \1.
+ input_glance_right_text		Glance right
+ input_glance_right_help		Turns the camera temporarily to the right.
+ 
+-input_glance_left_tooltip   Press \1 to glance left.
++input_glance_left_tooltip	Pocket: Q looks left. Current binding: \1.
+ input_glance_left_text		Glance left
+ input_glance_left_help		Turns the camera temporarily to the left.
+ 
+@@ -1188,7 +1188,7 @@
+ input_look_left_text		Look left
+ input_look_left_help		Turns the camera to the left or moves it right if the camera direction is fixed.
+ 
+-input_switch_view_tooltip   Press \1 to switch camera modes.
++input_switch_view_tooltip	Pocket: C changes camera. Current binding: \1.
+ input_switch_view_text		Switch view
+ input_switch_view_help		Switches the camera perspective. Available views: Smart external camera (default) and dumb external camera (both fixed to look at your cycle), free floating and internal camera (position fixed at your cycle ).
+ 
+@@ -1649,10 +1649,10 @@
+ language_firstchoice_help Press Enter, Return or Space to select this language.
+ 
+ language_menu_item_fist		First Language:
+-language_menu_item_first_help	\g will display most text messages in this language. Use Cursor Left/Right to choose.
++language_menu_item_first_help	Select the game language with A/L; W/S moves through the menu. The Pocket instructions are supplied in English.
+ 
+ language_menu_item_second	Second Language:
+-language_menu_item_second_help	If the first language is not available for one text item, it will be displayed in the second language (or in English as final fallback).  Use Cursor Left/Right to choose.
++language_menu_item_second_help	Select a second language with A/L. Missing translations use English; the Pocket instructions are supplied in English.
+ 
+ #*************************************
+ #*************************************
+@@ -2179,12 +2179,12 @@
+ 
+ #menu texts: generic
+ menuitem_exit_text		Exit Menu
+-menuitem_exit_help		Exits this menu and returns to the previous level
++menuitem_exit_help	Press Back to return to the previous menu.
+ 
+ menuitem_accept			Accept
+-menuitem_accept_help		Accepts the settings in this menu and continues.
+-
+-input_item_help			To change, press ENTER or SPACE, then press the key/mouse-button you want to assign to this control. Moving the mouse also works.
++menuitem_accept_help	Press Enter to accept and continue. W/S moves through menus; A/L changes a choice.
++
++input_item_help	Press Enter, then the key to assign. Back returns. Pocket defaults use A/L, Space and C; your changes are saved.
+ input_press_any_key		Press any key! 
+ 
+ menuitem_toggle_on		On
+@@ -2218,12 +2218,12 @@
+ #********************************************
+ #********************************************
+ 
+-welcome_message_heading		Welcome to \g!
+-
+-welcome_message		        You will now be hurled directly into a local game to get a feeling for things. It is set to a slower speed than a usual game. Your task is to make the other cycle crash into a wall. Don't panic, good luck and have fun!
+-
+-welcome_message_2_heading   We hope you enjoyed it so far.
+-welcome_message_2           You will now enter the regular main menu. You can access local games now via the "Play Game/"Local Game" menu path.\n\nBut the true action is to be found online, many industrious people have put up interesting servers with gameplay variations not available if you play solo.\nTo go online, select "Play Game"/"Multiplayer"/"Online Multiplayer".
++welcome_message_heading	Armagetron on the Titan Pocket
++
++welcome_message	Pocket defaults: A turns left, L turns right. Hold Space to brake; C changes camera.\n\nP pauses. Back opens the game menu. Avoid every wall, including your own trail. Your first local round runs at a slower speed.\n\nMenus: W/S move, A/L change choices, Enter selects, Back returns. Keep Pocket keyboard selected in setup.
++
++welcome_message_2_heading	Pocket controls and next game
++welcome_message_2	Play Game > Local Game starts another round.\n\nA/L turn; Space brakes; C changes camera. Q/O look left/right, W looks behind. P pauses, S shows scores, T opens chat, Back opens the menu.\n\nMenus use W/S, A/L, Enter and Back. Change bindings in Player Setup. Your edits are saved. Online play is not yet tested on this Pocket build.
+ 
+ #********************************************
+ #********************************************
+@@ -2233,8 +2233,8 @@
+ #********************************************
+ #********************************************
+ 
+-first_setup                 First Setup
+-first_game_title            First Game
++first_setup	Pocket first setup
++first_game_title	Pocket practice round
+ 
+ first_setup_color           Colour:
+ first_setup_color_help      Selects the colour of your lightcylce. You'll later be able to customize it in more detail.
+@@ -2253,19 +2253,19 @@
+ first_setup_leave_help      Don't change this.
+ 
+ first_setup_keys            Controls:
+-first_setup_keys_help       Select your startup keyboard layout here. It can be customized later, individual bindings can be changed. Select with cursor left and cursor right.
++first_setup_keys_help	Keep Pocket keyboard for A/L steering, Space brake and C camera. Use A/L to change this choice, W/S to move and Enter to accept. Later binding edits are saved.
+ first_setup_keys_cursor     Cursor Keys
+-first_setup_keys_cursor_help Control your cycle with the cursor keys, bulk of keyboard used for camera control, special actions and the second player. Good for right handed people and our general recommendation.
++first_setup_keys_cursor_help	Optional desktop cursor-key layout. For the Titan Pocket, select Pocket keyboard instead.
+ first_setup_keys_cursor_single     Cursor Keys, Single Player
+-first_setup_keys_cursor_single_help Control your cycle with the cursor keys, bulk of keyboard used for camera control and special actions. Good for right handed people when no friends are around.
++first_setup_keys_cursor_single_help	Optional desktop cursor-key layout for one player. Pocket keyboard is the recommended preset on this phone.
+ first_setup_keys_wasd       WASD Keys
+-first_setup_keys_wasd_help  Control your cycle with the ASD keys and surroundings, Cursor keys and rest of keyboard control camera and special actions. Good for left handed people and those used to move with WASD. Bad for people with AZERTY layout.
++first_setup_keys_wasd_help	Optional desktop WASD layout. Pocket keyboard uses A/L to turn, Space to brake and C for camera.
+ first_setup_keys_zqsd       ZQSD Keys
+-first_setup_keys_zqsd_help  Control your cycle with the QSD keys and surroundings, Cursor keys and rest of keyboard control camera and special actions. Good for left handed people and those used to move with ZQSD on AZERTY keyboards.
++first_setup_keys_zqsd_help	Optional desktop AZERTY layout. Pocket keyboard is the preset for the Titan Pocket.
+ #first_setup_keys_both       Two Handed
+ #first_setup_keys_both_help  Turn and look left with your left hand, turn and look right with the right hand. Good for ambidextrous people who don't want to use the mouse in any way and never play with a second player in split-screen.
+ first_setup_keys_x          Traditional
+-first_setup_keys_x_help     The default setup of old versions of the game. X turns right, the key left to that turns left. Recommended only for veterans.
++first_setup_keys_x_help	Legacy desktop layout for experienced players. Pocket keyboard is the recommended phone preset.
+ first_setup_keys_leave      Leave Alone
+ 
+ first_setup_net             Connection:
