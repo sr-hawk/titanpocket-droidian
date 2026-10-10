@@ -25,3 +25,9 @@ The installer is for the Pocket, not the workstation. The archive contains only 
 ## Edit the tour
 
 Edit `release-profile/overlay/usr/local/share/titan-pocket/tour.json`. The executable is `release-profile/overlay/usr/local/bin/pocket-tour`. Keep each page short; longer pages scroll while navigation stays visible. Host preview checks do not replace a test under the Pocket's custom GTK theme and Phosh session.
+
+## Complete replacement correction (pending rebuilt image)
+
+Current-04 left the original executable and package desktop file in place. The corrected overlay now replaces both `/usr/bin/phosh-tour` and `/usr/share/applications/mobi.phosh.PhoshTour.desktop`, in addition to the system-local launchers and service override. The local installer uses dpkg diversions so package upgrades retain the replacement; old packaged files are kept only as inactive backups outside their normal launch paths.
+
+When building an image, merge the profile overlay and then run `python3 public-release/pocket-tour/stage.py STAGED_ROOT` before generating/verifying the native bundle. This registers both paths in the existing first-boot native installer. Current-04 images have not been modified by this source correction.

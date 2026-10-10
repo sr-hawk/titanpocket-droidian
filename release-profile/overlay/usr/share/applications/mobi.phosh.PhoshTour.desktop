@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pocket Tour
+Comment=Get started with Droidian on the Titan Pocket
+Exec=/usr/local/bin/pocket-tour
+Icon=mobi.phosh.PhoshTour
+Terminal=false
+Categories=GNOME;GTK;Utility;
+StartupNotify=true
+OnlyShowIn=Phosh;
+X-Purism-FormFactor=Workstation;Mobile;
