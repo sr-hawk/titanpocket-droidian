@@ -5,7 +5,7 @@
   },
   {
     "title": "Give first setup a few minutes",
-    "body": "On the first boot, the phone expands storage and installs bundled packages before opening the desktop. Keep it powered and let setup finish before restarting.\n\nThose packages are included in the image; first setup does not need internet access. Later boots should be quicker."
+    "body": "On the first boot, the phone expands storage to use the existing userdata partition. Keep it powered and let setup finish before restarting.\n\nThe Pocket desktop, controls, apps, and their dependencies are already installed in this image. No package installation or desktop conversion runs on first boot. Storage expansion does not need internet access."
   },
   {
     "title": "Home and quick settings",

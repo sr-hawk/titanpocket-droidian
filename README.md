@@ -2,7 +2,7 @@
 
 A Linux phone experiment built around the Pocket’s physical keyboard and square screen. The capacitive keyboard works as a scroll pad **and an actual mouse**, with clicking, right-clicking, and dragging.
 
-**Build: `titan-pocket-current-05` — experimental release candidate.** The custom components were compared with the running development phone. This rebuild explicitly disables swipe-up navigation to Home, fully replaces the generic tour, and requires Pocket setup to succeed before starting the desktop. The preceding current-03 image was reported to install and boot successfully on October 9, 2026; current-05 has passed offline checks but has not yet been flashed. **First setup takes a few minutes** while storage expands and bundled packages install; let it finish before restarting.
+**Build: `titan-pocket-current-06` — experimental release candidate.** The Pocket shell, compositor, toolkits, input controls, game updates, and Pocket Tour are installed in the image before flashing. Packages are installed and configured during assembly. The only additional first-boot setup is storage expansion; there is no Pocket package installation on the phone or switch from a stock desktop. **First startup can take a few minutes.** This image requires its own full-flash test; it is not yet phone-tested.
 
 > **Flashing erases the phone’s userdata. Incorrect SP Flash Tool settings can destroy device-specific modem data or leave the phone unbootable, possibly beyond ordinary recovery. Read [installation and major risks](INSTALL.md) before using it.**
 

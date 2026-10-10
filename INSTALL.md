@@ -1,6 +1,6 @@
 # Installation and major risks
 
-**For experienced Titan Pocket testers with an established stock recovery setup. The preceding current-03 image was reported to install and boot successfully. This current-05 rebuild corrects Home navigation and completely replaces the tour; it still needs its own full-flash test.**
+**For experienced Titan Pocket testers with an established stock recovery setup. This image contains the preinstalled Pocket system and needs a full-flash acceptance test.**
 
 ## Major risks — read first
 
@@ -29,7 +29,7 @@
 3. Open SP Flash Tool, select your established Download Agent, and load **this release’s scatter**.
 4. Choose **Download Only**. Check the partition list yourself: **only `boot` and `userdata` may be selected**, with paths to these two images. Do not select preloader, bootloaders, NVRAM/NVDATA, `super`, or any other partition.
 5. Start Download. Connect the powered-off phone using the connection sequence established for your setup. Wait for SP Flash Tool to report successful completion before disconnecting or booting.
-6. Boot normally. **First setup takes a few minutes.** First boot expands storage and installs bundled packages offline before starting the desktop. Keep the phone powered and let setup finish before restarting; later boots should be quicker. The installer has a 30-minute timeout; this is not a measured normal boot time.
+6. Boot normally. **First setup takes a few minutes.** First boot expands storage before starting the already-installed Pocket desktop. Keep the phone powered and let setup finish before restarting; later boots should be quicker. No Pocket package installation, custom-binary copying, or desktop conversion runs on the phone.
 7. Check touchscreen, typing, Home, Fn + Home, scroll and mouse modes, audio, and brightness. Reboot once more and repeat the basic checks.
 
 **Stop on a partition-layout, authentication, or write error.** Save the error/log, removing personal identifiers before sharing. Do not format, change partition addresses, switch to Firmware Upgrade, select additional partitions, or repeatedly force retries to bypass it.
@@ -41,12 +41,12 @@ Once the desktop appears, follow the [Pocket getting-started guide](GETTING-STAR
 In a terminal on the phone:
 
 ```sh
-systemctl status pocket-first-boot-install.service --no-pager
-cat /var/lib/titan-pocket/first-boot-installed
+systemctl status pocket-prepare-home.service --no-pager
+journalctl -b -u pocket-prepare-home.service --no-pager
 df -h / /home
 ```
 
-The installer should finish successfully and create its marker. Root is configured to grow from 8 GiB to **16 GiB**; the outer userdata filesystem starts at **10 GiB** and grows to the existing partition. Home uses the remaining userdata space. The package retains the stock kernel and DTB and does not replace the stock vendor partitions.
+Storage preparation should finish successfully. Root is configured to grow from 8 GiB to **16 GiB**; the outer userdata filesystem starts at **10 GiB** and grows to the existing partition. Home uses the remaining userdata space. The package retains the stock kernel and DTB and does not replace the stock vendor partitions.
 
 SSH is deliberately disabled, including early-boot recovery SSH. The developer’s old connection helpers will not work. If you want SSH later, configure it from the phone with fresh host keys and your own authorized key. Never reuse another person’s key or a shared host identity.
 
@@ -56,4 +56,4 @@ If the desktop does not appear, this guide does not provide a remote recovery sh
 
 After a full flash and completed setup, open an app and swipe upward from the bottom: it must not open Home. Press physical Home: it must open the overview. Check Fn + Home, typing, and keyboard scroll/mouse modes. Open Pocket Tour from the app overview and confirm the generic swipe-up instructions are gone. Reboot and repeat these checks.
 
-The desktop now requires successful Pocket first-boot setup. If setup fails, it must not fall back to a stock desktop. Keep the installation result/log for diagnosis; do not treat a missing desktop as permission to format extra partitions.
+The Pocket desktop is already installed and waits for storage preparation. There is no stock desktop fallback. Keep the installation result/log for diagnosis; do not treat a missing desktop as permission to format extra partitions.

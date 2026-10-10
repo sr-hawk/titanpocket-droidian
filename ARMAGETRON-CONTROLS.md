@@ -1,6 +1,6 @@
 # Armagetron on the Titan Pocket
 
-These controls are included in the current-05 flash image and have been tested on the development phone. The preceding current-03 was reported to install and boot successfully. Current-05 and its game controls still need fresh-install verification.
+These controls are included in the current-06 flash image and have been tested on the development phone. The preceding current-03 was reported to install and boot successfully. Current-06 and its game controls still need fresh-install verification.
 
 | Key | Action |
 | --- | --- |

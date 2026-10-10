@@ -4,7 +4,7 @@ Your Pocket runs a Linux desktop adapted for its square touchscreen and physical
 
 ## Let the first setup finish
 
-**First setup takes a few minutes.** The phone expands storage and installs its bundled packages before opening the desktop. Keep it powered and let that finish before restarting. Later boots should be quicker. These setup packages are included in the image and do not need an internet connection.
+**First setup takes a few minutes.** The phone expands storage before opening the already-installed Pocket desktop. Keep it powered and let that finish before restarting. Later boots should be quicker. The Pocket components and their packages are already installed; storage expansion does not need an internet connection.
 
 This experimental build opens the desktop without asking for a password. Default Droidian accounts remain. You can change passwords and screen-lock settings yourself; there is no mandatory password setup wizard. SSH is disabled.
 
@@ -57,4 +57,4 @@ See [current status](STATUS.md) for the full feature list and [installation inst
 
 ## Report what you find
 
-Include the build name (**titan-pocket-current-05**), what you tried, what happened, and whether it still happens after a reboot. Remove personal information, keys, network details, and device identifiers from any logs or screenshots before sharing them.
+Include the build name (**titan-pocket-current-06**), what you tried, what happened, and whether it still happens after a reboot. Remove personal information, keys, network details, and device identifiers from any logs or screenshots before sharing them.

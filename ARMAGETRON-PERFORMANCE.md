@@ -13,6 +13,6 @@ The app icon uses the new launcher. Controls remain A/L to steer, Space to brake
 
 Full-screen menus, local gameplay, renderer identity, saved controls, normal exit, and desktop-entry relaunch were checked. Long sessions, heat/battery effects, multiplayer, and fresh-install behavior still need testing.
 
-**This GPU runtime is included in the current-05 flash image.** The measurements above came from the development phone; the preceding current-03 was reported to install and boot successfully. Current-05 and its game performance still need fresh-install verification.
+**This GPU runtime is included in the current-06 flash image.** The measurements above came from the development phone; the preceding current-03 was reported to install and boot successfully. Current-06 and its game performance still need fresh-install verification.
 
 The [runtime sources, patch, licenses, and build notes](armagetron-gpu/README.md) document the integration. [GL4ES](https://github.com/ptitSeb/gl4es) supplies desktop OpenGL compatibility over GLES. Its libraries and the modified SDL adapter are private to Armagetron; system graphics libraries are unchanged.

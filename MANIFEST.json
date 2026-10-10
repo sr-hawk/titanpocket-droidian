@@ -1,69 +1,57 @@
 {
-  "build": "titan-pocket-current-05",
-  "date": "2026-10-10",
-  "base": "preserved Pocket baseline with physical Home navigation, complete Pocket tour replacement, and required first-boot setup",
   "firmware_baseline": "2023010520",
   "mode": "Download Only",
   "selected_partitions": [
     "boot",
     "userdata"
   ],
-  "payloads": [
-    {
-      "file": "boot.img",
-      "bytes": 33554432,
-      "sha256": "5fb9c01757030888f6510e551b43a0e66682f62fe8624107b14e337819a6f692"
-    },
-    {
-      "file": "userdata.img",
-      "bytes": 4071507828,
-      "sha256": "6586aedcdc4b54816d7ffa1ea1d549bb0ff091af7947617ee579290960ccd2ab"
-    },
-    {
-      "file": "MT6771_Android_scatter.txt",
-      "bytes": 20831,
-      "sha256": "6fc2436227c5ee436398fb38f08dd090395d79002e007116a91589c513ea42e1"
-    }
-  ],
+  "build": "titan-pocket-current-06",
+  "date": "2026-10-10",
+  "base": "Recovered personal Pocket components; package installation and configuration completed during image assembly",
+  "runtime_tested": false,
+  "first_boot": {
+    "extra_setup": "storage expansion only",
+    "packages_already_configured": true,
+    "pocket_components_already_active": true,
+    "home_prepopulated": true,
+    "runtime_installer_included": false
+  },
   "validation": {
     "kernel_and_dtb_unchanged": true,
-    "avb_hash_footer_verified": true,
+    "unchanged_boot_avb_verification_retained": true,
     "ext4_consistency_checked": true,
-    "outer_metadata_and_reservation_verified": true,
     "expanded_bytes": 10737418240,
-    "expanded_sha256": "7f976d83a81fe3ae1bac978ee9b462d3dd1f6fc14c56b3419029c7c3815cab65",
-    "expanded_crc32": "3d1ca1d7",
+    "expanded_sha256": "d6e7d4c9518388fae1080cc6c4a845d28a4a886eb2de841eee91ca513938c3e2",
+    "expanded_crc32": "e651f78b",
     "chunk_counts": {
-      "0xcac1": 182,
-      "0xcac2": 237
+      "0xcac1": 218,
+      "0xcac2": 260
     },
     "aosp_decode_passed": true,
-    "rootfs_sha256": "5900c5f1d6893488f69c1f0429768e9b4db31fa55c172e9578fb811720a9e76b",
+    "rootfs_sha256": "34401aeb8c09fdb2b5bdc8dd18b06c0a41d7ec546441e79985091486f845d598",
     "nested_rootfs_verified": true,
     "runtime_tested": false,
-    "dependency_objects_checked": 221,
-    "installer_preflight_tests_passed": 5,
-    "overlay_payloads_verified": 1253,
-    "offline_package_count": 376,
-    "unlisted_packages_removed": 0,
-    "unprotected_package_overwrites": 0,
-    "offline_package_dependencies_satisfied": true,
-    "release_profile": {
-      "gallery_files_absent": true,
-      "launcher_overrides_verified": true,
-      "home_files_match_pristine": true,
-      "home_files_checked": 10,
-      "account_databases_match_pristine": true,
-      "passwordless_desktop_configuration_unchanged": true,
-      "latest_game_payloads_verified": true,
-      "boot_and_scatter_unchanged": true,
-      "pocket_tour_payload_and_dependencies_verified": true,
-      "original_tour_paths_replaced_and_protected": true,
-      "first_boot_required_before_shell": true
-    },
-    "baseline_current_03_preserved_except_reviewed_corrections": true
+    "bundled_packages_configured": 376,
+    "total_installed_package_records": 1665,
+    "dpkg_audit_empty": true,
+    "core_linker_dependencies_resolved": true,
+    "gtk3_import_passed": true,
+    "schema_available": true,
+    "performed_during_image_assembly": true,
+    "changed_entries_metadata_verified": 24474,
+    "changed_regular_file_hashes_verified": 19962,
+    "outer_metadata_and_reservation_verified": true,
+    "default_home_prepopulated": true,
+    "home_regular_files_match_pristine": 9,
+    "storage_script_matches_tested_candidate": true,
+    "scatter_selected_partitions": [
+      "boot",
+      "userdata"
+    ],
+    "personal_baseline_paths_accounted_for": 181,
+    "storage_host_tests_passed": 5,
+    "active_component_readback_verified": true
   },
-  "runtime_tested": false,
   "privacy": {
     "masked_services": [
       "pocket-debug-ssh.service",
@@ -79,6 +67,24 @@
     "account_databases_match_pristine": true,
     "developer_build_paths_scrubbed": true,
     "ssh_enabled_by_default": false,
-    "phosh_starts_unlocked": true
-  }
+    "phosh_starts_unlocked": true,
+    "default_login_records_preserved": true
+  },
+  "payloads": [
+    {
+      "file": "boot.img",
+      "bytes": 33554432,
+      "sha256": "5fb9c01757030888f6510e551b43a0e66682f62fe8624107b14e337819a6f692"
+    },
+    {
+      "file": "userdata.img",
+      "bytes": 4715817620,
+      "sha256": "34d51818ca45d6b1c8a935850dc3a2bc1ce9e12fbd88d8ef4e9cc2d80bfdc289"
+    },
+    {
+      "file": "MT6771_Android_scatter.txt",
+      "bytes": 20831,
+      "sha256": "6fc2436227c5ee436398fb38f08dd090395d79002e007116a91589c513ea42e1"
+    }
+  ]
 }

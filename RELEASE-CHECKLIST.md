@@ -1,21 +1,21 @@
 # Before publishing
 
-The updated `titan-pocket-current-05` candidate is staged locally. Nothing has been uploaded.
+The updated `titan-pocket-current-06` candidate is staged locally. Nothing has been uploaded.
 
 ## Completed
 
-- Current-05 includes Pocket Armagetron controls, native Wayland GPU runtime, and the selected release app cleanup.
+- Current-06 includes Pocket Armagetron controls, native Wayland GPU runtime, and the selected release app cleanup.
 
-- Current custom functionality compared with installed system files on the development phone.
-- Updated payloads assembled into a clean image; missing tilt executable and installer manifest fixed.
-- Dependency-presence audit, installer preflight regression checks, filesystem and sparse-image verification.
+- Current custom files compared with saved hashes of the personal phone and later game-deployment records.
+- Updated payloads assembled into a clean image; Pocket components installed at their final runtime paths.
+- Dependency-presence audit, completed offline package installation and package-state checks, filesystem and sparse-image verification.
 - Privacy cleanup repeated; maintainer SSH keys removed and SSH disabled in both boot stages.
 - Simple feature/status guide, installation instructions, major SP Flash Tool risks, component hashes, and image checksums.
 - Separate Git history with a neutral project identity; no developer history; the origin now points to the existing project repository.
 
 ## Still required before public binary distribution
 
-- Fresh-flash current-05 and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, games, and Pocket Tour. The successful user-reported test applies to the preceding current-03.
+- Fresh-flash current-06 and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, games, and Pocket Tour. The successful user-reported test applies to current-03; current-05 subsequently failed to reach the desktop.
 - Assemble matching corresponding source, local modifications, build instructions, and upstream license notices for the distributed components. This repository currently contains release metadata/documentation, not a complete source release or reproducible build environment. No blanket license is assigned to the combined image. See LICENSING.md for the scoped MIT grant and upstream obligations. Also resolve redistribution permission for embedded vendor/firmware binaries.
 - Record the successfully tested SP Flash Tool version, Download Agent provenance/hash, and connection sequence without distributing or linking tool/DA downloads. The install guide currently requires an already established Pocket setup.
 - Add the actual download URL only after publication; use the host’s supported attachment size/splitting procedure for the multi-gigabyte userdata image.
@@ -28,11 +28,11 @@ Run `sha256sum -c SHA256SUMS` beside the images and scatter. Checksums identify 
 
 ## Pocket Tour included
 
-- The replacement tour, content, launcher, and first-run service override are included in current-05. Host layout checks passed; physical-phone testing remains pending.
+- The replacement tour, content, launcher, and first-run service override are included in current-06. Host layout checks passed; physical-phone testing remains pending.
 
 ## Required full-flash regression checks
 
 - App-screen bottom swipe does not open Home; physical Home still does.
 - Pocket Tour replaces the old tour in the app grid and first-run flow.
-- First-boot installer succeeds; no fallback to stock desktop.
+- Storage expansion succeeds; Pocket files are already installed and no stock desktop fallback exists.
 - Repeat after a second boot, plus existing keyboard, mouse, audio, brightness, and game checks.

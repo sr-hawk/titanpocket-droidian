@@ -1,32 +1,9 @@
 # Pocket welcome tour
 
-A new, original GTK3/PyGObject tour for the Titan Pocket. It replaces the generic Phosh tour entry with nine pages covering first setup, Home, Fn navigation, keyboard scrolling, mouse gestures, games, limitations, and unlocked startup. A/L or arrow keys change pages; W/S or arrow keys scroll; Back/Escape closes. Touch buttons work too. It makes no network requests and changes no user settings.
+Current-06 includes the Pocket-specific nine-page tour. It explains physical Home, Fn + Home, keyboard navigation, capacitive scroll/mouse modes, games, and current limitations. The setup page describes storage expansion only; the Pocket system and packages are already installed.
 
-## Packaging status
+Both original tour paths are replaced in the image: `/usr/bin/phosh-tour` launches `/usr/local/bin/pocket-tour`, and the original application entry is replaced. Package diversions are already registered. The existing first-run service uses the Pocket tour and retains its normal completion tracking.
 
-Included in current-05 userdata.img. The preceding current-03 does not contain it. All nine pages passed host layout checks; physical-phone testing is still pending.
+Python 3, PyGObject, and GTK3 are installed dependencies. Host layout checks passed; this image still requires a full-flash phone test. There is no separate live-update step in the release validation workflow.
 
-The overlay installs `/usr/local/bin/pocket-tour` and its JSON content. A desktop file with the existing Phosh Tour ID replaces the app-grid entry. A systemd user-service drop-in replaces the absolute first-run command; the existing first-run conditions and completion marker remain in effect. `/usr/local/bin/phosh-tour` handles ordinary PATH-based launches. The original `/usr/bin/phosh-tour` path and package desktop file are also replaced. The native installer uses dpkg diversions; inactive stock copies live outside their normal launch paths.
-
-Dependencies already present in current-05: Python 3, PyGObject, and GTK3 typelib/runtime. The app uses GTK3 rather than adding another UI toolkit.
-
-## Install on an existing Pocket
-
-Copy the provided `pocket-tour-update.tar.gz` to the phone and extract it into a new folder. From that folder, run:
-
-```sh
-sudo sh pocket-tour/install.sh
-```
-
-Then open **Pocket Tour** in the app overview. If the old launcher is cached, reboot. The existing first-run marker is preserved, so an already completed tour does not start automatically again. The installer backs up any previous override files under `/var/backups/pocket-tour.*`; it does not enable SSH or alter passwords.
-
-The installer is for the Pocket, not the workstation. The archive contains only the tour files, installer, documentation, and applicable MIT notice. It does not contain a flash image.
-
-## Edit the tour
-
-Edit `release-profile/overlay/usr/local/share/titan-pocket/tour.json`. The executable is `release-profile/overlay/usr/local/bin/pocket-tour`. Keep each page short; longer pages scroll while navigation stays visible. Host preview checks do not replace a test under the Pocket's custom GTK theme and Phosh session.
-
-
-## Image integration
-
-Both original tour paths are registered through `pocket-tour/stage.py` after merging the release overlay and before generating the image. Current-05 includes this complete replacement. Acceptance testing uses a full flash; the optional local installer is not used to validate the public image.
+Original tour code and content use the scoped MIT license described in ../LICENSING.md. The package staging helper remains source material; current-06 applies replacements during image assembly.
