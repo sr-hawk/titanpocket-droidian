@@ -1,0 +1,34 @@
+--- a/src/home.c
++++ b/src/home.c
+@@ -153,18 +153,15 @@
+   gboolean success;
+   gint handle = 0;
+   PhoshAppGrid *app_grid;
+-  PhoshDragSurfaceDragMode drag_mode = PHOSH_DRAG_SURFACE_DRAG_MODE_HANDLE;
+-  PhoshDragSurfaceState drag_state = phosh_drag_surface_get_drag_state (PHOSH_DRAG_SURFACE (self));
+ 
+   /* reset osk_toggle_long_press to prevent OSK from unfolding accidentally */
+   gtk_event_controller_reset (GTK_EVENT_CONTROLLER (self->osk_toggle_long_press));
+ 
+-  /* Update the handle's and dragability */
+-  if (phosh_overview_has_running_activities (PHOSH_OVERVIEW (self->overview)) == FALSE &&
+-    self->state == PHOSH_HOME_STATE_UNFOLDED && drag_state != PHOSH_DRAG_SURFACE_STATE_DRAGGED) {
+-    drag_mode = PHOSH_DRAG_SURFACE_DRAG_MODE_NONE;
+-  }
+-  phosh_drag_surface_set_drag_mode (PHOSH_DRAG_SURFACE (self), drag_mode);
++  /* Titan Pocket: use the physical Home key. A zero-height home bar alone
++   * does not disable compositor edge drags. Programmatic state changes remain
++   * available, while touchscreen swipes must stay with the active app. */
++  phosh_drag_surface_set_drag_mode (PHOSH_DRAG_SURFACE (self),
++                                    PHOSH_DRAG_SURFACE_DRAG_MODE_NONE);
+ 
+   /* Update handle size */
+   app_grid = phosh_overview_get_app_grid (PHOSH_OVERVIEW (self->overview));
+@@ -727,6 +724,7 @@
+                        /* drag-surface */
+                        "layer-shell-effects", layer_shell_effects,
+                        "exclusive", PHOSH_HOME_BAR_FOLDED,
++                       "drag-mode", PHOSH_DRAG_SURFACE_DRAG_MODE_NONE,
+                        "threshold", PHOSH_HOME_DRAG_THRESHOLD,
+                        NULL);
+ }

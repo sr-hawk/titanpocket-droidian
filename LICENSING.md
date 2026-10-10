@@ -15,7 +15,7 @@ Keep existing copyright notices and the applicable upstream license. Changes to 
 | Armagetron controls patch | GPL-2.0-or-later, following the modified Armagetron source headers. [GPL version 2 text](licenses/GPL-2.0.txt). Supply the matching source and build material with the binary release. |
 | Private SDL 1.2 compatibility patch/runtime | zlib license; retain [SDL notice](armagetron-gpu/SDL12-COMPAT-LICENSE) and identify the altered version. |
 | GL4ES runtime | MIT; retain [upstream notice](armagetron-gpu/GL4ES-LICENSE). |
-| Phosh modifications | Main source is GPL-3.0-or-later; its copyright inventory also lists exceptions and differently licensed files. Keep the per-file terms. |
+| Phosh modifications (including pocket-shell/disable-home-swipe.patch) | Main source is GPL-3.0-or-later; its copyright inventory also lists exceptions and differently licensed files. Keep the per-file terms. |
 | GTK and related libraries | LGPL and other per-file licenses; check each exact source version, notices, and applicable source/relinking obligations. |
 | Linux kernel in boot.img | Linux is GPL-2.0-only with the syscall exception; matching kernel source/build material and component notices require review. A stock binary is not exempt merely because we did not modify it. |
 | Debian/Droidian packages | Each package has its own copyright/license record, normally under `/usr/share/doc/<package>/copyright`, with common license texts under `/usr/share/common-licenses`. |
