@@ -2,7 +2,7 @@
 
 Updated October 9, 2026 for `titan-pocket-current-03`.
 
-The current local custom binaries/configuration were compared with the running development phone before packaging. The release uses a clean, pristine-rootfs-based filesystem, not a clone of personal phone data. **Component matches and offline image checks do not establish that this exact image boots. A fresh flash test remains outstanding.**
+The current local custom binaries/configuration were compared with the running development phone before packaging. The release uses a clean, pristine-rootfs-based filesystem, not a clone of personal phone data. **A tester reported successful installation and boot of current-03 on October 9, 2026. First setup takes a few minutes.** This is a user-reported smoke test, not an instrumented verification of every feature.
 
 | Area | Current state |
 | --- | --- |
@@ -28,10 +28,10 @@ The previous image lacked later toolkit, shell, compositor, brightness, accelero
 
 ## Validation boundary
 
-- Read-only comparison with the development phone; no phone changes or flashing performed.
+- Before packaging: read-only comparison with the development phone. After packaging: a tester reported that the flashed current-03 image works.
 - Native payload inventory, ELF dependency-presence audit, offline package dependency/conflict checks, installer validation, image file/link/mode readback, ext4 checks, sparse expansion, and nested-root verification.
 - Privacy checks repeated after updates; SSH remains disabled in both boot stages.
-- Fresh installation, storage growth, first/second boot, graphical behavior, and games on **this exact candidate** remain untested.
+- Successful installation/boot is user-reported. Measured storage growth, second boot, and individual hardware/game checks on **this exact candidate** still need explicit results.
 
 `COMPONENTS.json` records the bundled custom payload hashes. `MANIFEST.json` and `SHA256SUMS` identify the image pair. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) before publication.
 

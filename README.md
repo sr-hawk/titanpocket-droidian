@@ -2,7 +2,7 @@
 
 A Linux phone experiment built around the Pocket’s physical keyboard and square screen. The capacitive keyboard works as a scroll pad **and an actual mouse**, with clicking, right-clicking, and dragging.
 
-**Build: `titan-pocket-current-03` — experimental release candidate.** The custom components were compared with the running development phone. This newly assembled, privacy-cleaned image has passed offline checks but **has not had a fresh flash/boot test**.
+**Build: `titan-pocket-current-03` — experimental release candidate.** The custom components were compared with the running development phone. This privacy-cleaned image passed offline checks, and a tester reported a successful installation and boot on October 9, 2026. Detailed post-install checks are still pending. **First setup takes a few minutes** while storage expands and bundled packages install; let it finish before restarting.
 
 > **Flashing erases the phone’s userdata. Incorrect SP Flash Tool settings can destroy device-specific modem data or leave the phone unbootable, possibly beyond ordinary recovery. Read [installation and major risks](INSTALL.md) before using it.**
 
@@ -22,6 +22,8 @@ Fingerprint unlock has worked on the development phone, but this lab build **sta
 Bluetooth is not working. Calls, SMS, and mobile data are untested. Suspend/wake, battery life, Wi-Fi reconnect, cameras, microphones, headset routing, GPS, NFC, and other hardware need more testing. Ordinary system updates may overwrite adaptations or fail to update the custom boot image.
 
 See [STATUS.md](STATUS.md) for the feature list and testing limits, [INSTALL.md](INSTALL.md) for installation, and [PRIVACY-REPORT.md](PRIVACY-REPORT.md) for cleanup details.
+
+New to this build? Read the [Pocket getting-started guide](GETTING-STARTED.md).
 
 ## Controls
 

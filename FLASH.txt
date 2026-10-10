@@ -1,4 +1,4 @@
-EXPERIMENTAL CANDIDATE: titan-pocket-current-03. Not fresh-flash/boot tested.
+EXPERIMENTAL CANDIDATE: titan-pocket-current-03. Installation/boot success reported by a tester; detailed checks pending.
 READ INSTALL.md FIRST. FLASHING ERASES USERDATA.
 Wrong settings can destroy device-specific modem data or brick the phone.
 Titan Pocket, stock 2023010520, unlocked bootloader, original partition layout only.
@@ -7,5 +7,5 @@ SP Flash Tool: Download Only. Select ONLY boot and userdata from this release.
 NEVER Format All, Firmware Upgrade, or select preloader/other partitions.
 STOP on layout/authentication/write errors; do not force or format past them.
 Keep USB and power stable until successful completion.
-First boot expands storage and installs offline packages; then test a second boot.
+FIRST SETUP TAKES A FEW MINUTES. Let storage expansion and offline package installation finish before restarting; then test a second boot.
 SSH (including early recovery SSH) is disabled. Phosh starts unlocked.

@@ -1,6 +1,6 @@
 # Installation and major risks
 
-**For experienced Titan Pocket testers with an established stock recovery setup. This exact candidate has not yet passed a fresh-install test.**
+**For experienced Titan Pocket testers with an established stock recovery setup. A tester reported a successful installation and boot of current-03 on October 9, 2026; detailed post-install checks remain pending.**
 
 ## Major risks — read first
 
@@ -29,10 +29,12 @@
 3. Open SP Flash Tool, select your established Download Agent, and load **this release’s scatter**.
 4. Choose **Download Only**. Check the partition list yourself: **only `boot` and `userdata` may be selected**, with paths to these two images. Do not select preloader, bootloaders, NVRAM/NVDATA, `super`, or any other partition.
 5. Start Download. Connect the powered-off phone using the connection sequence established for your setup. Wait for SP Flash Tool to report successful completion before disconnecting or booting.
-6. Boot normally. First boot expands storage and installs bundled packages offline before starting the desktop, so allow it longer than later boots. The installer has a 30-minute timeout; this is not a measured normal boot time.
+6. Boot normally. **First setup takes a few minutes.** First boot expands storage and installs bundled packages offline before starting the desktop. Keep the phone powered and let setup finish before restarting; later boots should be quicker. The installer has a 30-minute timeout; this is not a measured normal boot time.
 7. Check touchscreen, typing, Home, Fn + Home, scroll and mouse modes, audio, and brightness. Reboot once more and repeat the basic checks.
 
 **Stop on a partition-layout, authentication, or write error.** Save the error/log, removing personal identifiers before sharing. Do not format, change partition addresses, switch to Firmware Upgrade, select additional partitions, or repeatedly force retries to bypass it.
+
+Once the desktop appears, follow the [Pocket getting-started guide](GETTING-STARTED.md).
 
 ## First-boot checks
 

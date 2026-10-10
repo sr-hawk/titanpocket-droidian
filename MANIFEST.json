@@ -57,7 +57,14 @@
       "passwordless_desktop_configuration_unchanged": true,
       "latest_game_payloads_verified": true,
       "boot_and_scatter_unchanged": true
-    }
+    },
+    "user_reported_install_boot": {
+      "reported_on": "2026-10-09",
+      "result": "success",
+      "first_setup": "takes a few minutes",
+      "scope": "Tester report; detailed storage, second-boot, hardware and game results pending"
+    },
+    "runtime_tested_scope": "Existing runtime_tested=false flags refer to comprehensive recorded validation, not the user-reported installation/boot smoke test."
   },
   "runtime_tested": false,
   "privacy": {
