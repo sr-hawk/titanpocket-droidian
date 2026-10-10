@@ -1,10 +1,10 @@
 # Before publishing
 
-The updated `titan-pocket-current-04` candidate is staged locally. Nothing has been uploaded.
+The updated `titan-pocket-current-05` candidate is staged locally. Nothing has been uploaded.
 
 ## Completed
 
-- Current-04 includes Pocket Armagetron controls, native Wayland GPU runtime, and the selected release app cleanup.
+- Current-05 includes Pocket Armagetron controls, native Wayland GPU runtime, and the selected release app cleanup.
 
 - Current custom functionality compared with installed system files on the development phone.
 - Updated payloads assembled into a clean image; missing tilt executable and installer manifest fixed.
@@ -15,7 +15,7 @@ The updated `titan-pocket-current-04` candidate is staged locally. Nothing has b
 
 ## Still required before public binary distribution
 
-- Fresh-flash current-04 and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, games, and Pocket Tour. The successful user-reported test applies to the preceding current-03.
+- Fresh-flash current-05 and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, games, and Pocket Tour. The successful user-reported test applies to the preceding current-03.
 - Assemble matching corresponding source, local modifications, build instructions, and upstream license notices for the distributed components. This repository currently contains release metadata/documentation, not a complete source release or reproducible build environment. No blanket license is assigned to the combined image. See LICENSING.md for the scoped MIT grant and upstream obligations. Also resolve redistribution permission for embedded vendor/firmware binaries.
 - Record the successfully tested SP Flash Tool version, Download Agent provenance/hash, and connection sequence without distributing or linking tool/DA downloads. The install guide currently requires an already established Pocket setup.
 - Add the actual download URL only after publication; use the host’s supported attachment size/splitting procedure for the multi-gigabyte userdata image.
@@ -28,4 +28,11 @@ Run `sha256sum -c SHA256SUMS` beside the images and scatter. Checksums identify 
 
 ## Pocket Tour included
 
-- The replacement tour, content, launcher, and first-run service override are included in current-04. Host layout checks passed; physical-phone testing remains pending.
+- The replacement tour, content, launcher, and first-run service override are included in current-05. Host layout checks passed; physical-phone testing remains pending.
+
+## Required full-flash regression checks
+
+- App-screen bottom swipe does not open Home; physical Home still does.
+- Pocket Tour replaces the old tour in the app grid and first-run flow.
+- First-boot installer succeeds; no fallback to stock desktop.
+- Repeat after a second boot, plus existing keyboard, mouse, audio, brightness, and game checks.

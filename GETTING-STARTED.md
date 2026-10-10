@@ -10,7 +10,7 @@ This experimental build opens the desktop without asking for a password. Default
 
 ## Find your way around
 
-Press **Home** to open the app overview. Tap an app to launch it or switch to it. Press **Fn + Home** for quick settings, including the brightness and volume controls.
+Press **Home** to open the app overview. Swipe-up navigation to Home is disabled on the Pocket. Tap an app to launch it or switch to it. Press **Fn + Home** for quick settings, including the brightness and volume controls.
 
 Use the touchscreen whenever an application's keyboard navigation is awkward. Some desktop applications still have windows or dialogs that do not fit the small screen well.
 
@@ -57,4 +57,4 @@ See [current status](STATUS.md) for the full feature list and [installation inst
 
 ## Report what you find
 
-Include the build name (**titan-pocket-current-04**), what you tried, what happened, and whether it still happens after a reboot. Remove personal information, keys, network details, and device identifiers from any logs or screenshots before sharing them.
+Include the build name (**titan-pocket-current-05**), what you tried, what happened, and whether it still happens after a reboot. Remove personal information, keys, network details, and device identifiers from any logs or screenshots before sharing them.

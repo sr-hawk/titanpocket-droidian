@@ -1,12 +1,12 @@
 {
-  "build": "titan-pocket-current-04",
-  "date": "2026-10-09",
+  "build": "titan-pocket-current-05",
+  "date": "2026-10-10",
   "scope": "Key custom release payloads; hashes describe cleaned release bytes, not personal device state.",
   "runtime_tested": false,
   "components": [
     {
       "path": "/usr/libexec/phosh",
-      "sha256": "3552548480d53aad23c12f15f8f580610c639097f3cbb09c5aa1549f489262f8",
+      "sha256": "d0c53fdfd44a695608187ee04ee90a7becb288d588361bc3e0ffa1483cc1d468",
       "installation": "first boot, with dpkg diversion"
     },
     {
@@ -248,6 +248,21 @@
       "path": "/usr/local/share/applications/mobi.phosh.PhoshTour.desktop",
       "sha256": "120dfd710c59c3ccd1c28246dc4df83a334a7dd78119e2e77783602a0c307e46",
       "installation": "filesystem overlay"
+    },
+    {
+      "path": "/etc/systemd/system/phosh.service.d/96-pocket-first-boot-install.conf",
+      "sha256": "d820b82fa21a173e0c6a697f1843af427354053490f906a13dca8afa58b2913b",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/bin/phosh-tour",
+      "sha256": "79d440aac9ad12e3cdb08fd4ff5e3d7c0f0d6ee1b6b798da343a30dee630c883",
+      "installation": "first boot native diversion"
+    },
+    {
+      "path": "/usr/share/applications/mobi.phosh.PhoshTour.desktop",
+      "sha256": "120dfd710c59c3ccd1c28246dc4df83a334a7dd78119e2e77783602a0c307e46",
+      "installation": "first boot native diversion"
     }
   ],
   "component_runtime_checks": {
@@ -267,10 +282,17 @@
       "development_phone_median_fps": 60.0
     },
     "pocket_tour": {
-      "included_in": "titan-pocket-current-04",
+      "included_in": "titan-pocket-current-05",
       "host_layout_pages_checked": 9,
       "image_payload_and_dependencies_verified": true,
-      "physical_phone_tested": false
+      "physical_phone_tested": false,
+      "original_paths_replaced": true
+    },
+    "pocket_shell": {
+      "home_swipe_disabled_in_source": true,
+      "arm64_build_passed": true,
+      "physical_home_state_path_preserved": true,
+      "full_flash_tested": false
     }
   }
 }

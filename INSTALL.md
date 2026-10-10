@@ -1,6 +1,6 @@
 # Installation and major risks
 
-**For experienced Titan Pocket testers with an established stock recovery setup. The preceding current-03 image was reported to install and boot successfully. This current-04 rebuild adds Pocket Tour and still needs its own flash/boot test.**
+**For experienced Titan Pocket testers with an established stock recovery setup. The preceding current-03 image was reported to install and boot successfully. This current-05 rebuild corrects Home navigation and completely replaces the tour; it still needs its own full-flash test.**
 
 ## Major risks — read first
 
@@ -51,3 +51,9 @@ The installer should finish successfully and create its marker. Root is configur
 SSH is deliberately disabled, including early-boot recovery SSH. The developer’s old connection helpers will not work. If you want SSH later, configure it from the phone with fresh host keys and your own authorized key. Never reuse another person’s key or a shared host identity.
 
 If the desktop does not appear, this guide does not provide a remote recovery shell. Use your previously established stock recovery route. Normal package updates are not a validated upgrade path for this custom kernel/initramfs and modified desktop stack.
+
+## Pocket-specific acceptance checks
+
+After a full flash and completed setup, open an app and swipe upward from the bottom: it must not open Home. Press physical Home: it must open the overview. Check Fn + Home, typing, and keyboard scroll/mouse modes. Open Pocket Tour from the app overview and confirm the generic swipe-up instructions are gone. Reboot and repeat these checks.
+
+The desktop now requires successful Pocket first-boot setup. If setup fails, it must not fall back to a stock desktop. Keep the installation result/log for diagnosis; do not treat a missing desktop as permission to format extra partitions.

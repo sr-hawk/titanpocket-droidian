@@ -1,6 +1,6 @@
 # Current status
 
-Updated October 9, 2026 for `titan-pocket-current-04`.
+Updated October 10, 2026 for `titan-pocket-current-05`.
 
 The current local custom binaries/configuration were compared with the running development phone before packaging. The release uses a clean, pristine-rootfs-based filesystem, not a clone of personal phone data. **A tester reported successful installation and boot of the preceding current-03 on October 9, 2026. First setup takes a few minutes.** This is a user-reported smoke test, not an instrumented verification of every feature.
 
@@ -28,14 +28,14 @@ The previous image lacked later toolkit, shell, compositor, brightness, accelero
 
 ## Validation boundary
 
-- Before packaging: read-only comparison with the development phone. A tester reported that the preceding current-03 image works. Current-04 adds Pocket Tour and has not yet been flashed.
+- Before packaging: read-only comparison with the development phone. A tester reported that the preceding current-03 image works. Current-05 adds Pocket Tour and has not yet been flashed.
 - Native payload inventory, ELF dependency-presence audit, offline package dependency/conflict checks, installer validation, image file/link/mode readback, ext4 checks, sparse expansion, and nested-root verification.
 - Privacy checks repeated after updates; SSH remains disabled in both boot stages.
-- Current-03 installation/boot success is user-reported. Current-04 still needs a fresh flash/boot test, storage-growth and second-boot checks, and individual hardware/game checks.
+- Current-03 installation/boot success is user-reported. Current-05 still needs a fresh flash/boot test, storage-growth and second-boot checks, and individual hardware/game checks.
 
 `COMPONENTS.json` records the bundled custom payload hashes. `MANIFEST.json` and `SHA256SUMS` identify the image pair. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) before publication.
 
-## Included in current-04
+## Included in current-05
 
 [Pocket Armagetron controls](ARMAGETRON-CONTROLS.md) and [native Wayland GPU acceleration](ARMAGETRON-PERFORMANCE.md) are now included. The development phone measured a median 60.0 FPS with GPU rendering at 720 × 720, compared with 35.5 FPS in software. These are development-phone measurements, not results from a fresh flash of this image.
 
@@ -43,4 +43,12 @@ The [experimental release profile](release-profile/README.md) keeps unlocked sta
 
 ## Pocket Tour
 
-Current-04 replaces the generic phone tour launcher and first-run command with a Pocket-specific, nine-page welcome tour. It covers keyboard navigation, scroll/mouse modes, first setup, games, and limitations. Host layout checks passed; physical-phone validation is pending.
+Current-05 replaces the generic phone tour launcher and first-run command with a Pocket-specific, nine-page welcome tour. It covers keyboard navigation, scroll/mouse modes, first setup, games, and limitations. Host layout checks passed; physical-phone validation is pending.
+
+## Current-05 correction
+
+A tester reported that swiping up still opened Home on current-04. Comparison showed its Pocket payloads matched current-03, but source review found that hiding the home bar did not disable its draggable surface. Current-05 explicitly disables home-surface dragging; physical Home retains its programmatic path. Other shell/input payloads are taken from the preserved current-03 overlay, with only the reviewed Phosh change and installer dependency change.
+
+Both original tour paths are replaced, including `/usr/bin/phosh-tour`; the existing native installer protects them with package diversions. First-boot package installation is now required before Phosh starts, so a failed installation cannot silently start the stock desktop. This does not establish that installation failure caused the reported behavior.
+
+Current-05 has passed offline checks but requires a full-flash runtime test. No live updates are used for release acceptance tests.
