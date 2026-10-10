@@ -4,11 +4,11 @@ A new, original GTK3/PyGObject tour for the Titan Pocket. It replaces the generi
 
 ## Packaging status
 
-Prepared after the tested current-03 image. **Not included in current-03's boot.img or userdata.img, and not yet tested on the physical phone.** Merge the release-profile overlay during the next image build. Do not describe current-03 as containing this tour.
+Included in current-04 userdata.img. The preceding current-03 does not contain it. All nine pages passed host layout checks; physical-phone testing is still pending.
 
 The overlay installs `/usr/local/bin/pocket-tour` and its JSON content. A desktop file with the existing Phosh Tour ID replaces the app-grid entry. A systemd user-service drop-in replaces the absolute first-run command; the existing first-run conditions and completion marker remain in effect. `/usr/local/bin/phosh-tour` handles ordinary PATH-based launches. The original packaged binary remains intact at `/usr/bin/phosh-tour`.
 
-Dependencies already present in current-03: Python 3, PyGObject, and GTK3 typelib/runtime. The app uses GTK3 rather than adding another UI toolkit.
+Dependencies already present in current-04: Python 3, PyGObject, and GTK3 typelib/runtime. The app uses GTK3 rather than adding another UI toolkit.
 
 ## Install on an existing Pocket
 

@@ -1,5 +1,5 @@
 {
-  "build": "titan-pocket-current-03",
+  "build": "titan-pocket-current-04",
   "date": "2026-10-09",
   "scope": "Key custom release payloads; hashes describe cleaned release bytes, not personal device state.",
   "runtime_tested": false,
@@ -223,6 +223,31 @@
       "path": "/usr/local/share/applications/xfce4-terminal-settings.desktop",
       "sha256": "4fec7bbc177a963cc0ab1237c6ffbfb288f8caabef6ff3b2e86177f675cd1b74",
       "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/local/bin/pocket-tour",
+      "sha256": "c97ce6a942aa59319a2a3f95e57c5b682355adbccef981b0211cbc35237180fd",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/local/bin/phosh-tour",
+      "sha256": "79d440aac9ad12e3cdb08fd4ff5e3d7c0f0d6ee1b6b798da343a30dee630c883",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/local/share/titan-pocket/tour.json",
+      "sha256": "0887830837d502c22b123e30a36d15b57e936de0f4566a6b611a0de86344d413",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/lib/systemd/user/phosh-tour.service.d/50-pocket.conf",
+      "sha256": "e29d2425ef22f87ac3e2aaa5534f019b6a5d5c1546710707bc934ac81d2ffb45",
+      "installation": "filesystem overlay"
+    },
+    {
+      "path": "/usr/local/share/applications/mobi.phosh.PhoshTour.desktop",
+      "sha256": "120dfd710c59c3ccd1c28246dc4df83a334a7dd78119e2e77783602a0c307e46",
+      "installation": "filesystem overlay"
     }
   ],
   "component_runtime_checks": {
@@ -240,6 +265,12 @@
       "native_wayland_gpu_verified": true,
       "gpu_renderer": "ARM Mali-G72 MP3",
       "development_phone_median_fps": 60.0
+    },
+    "pocket_tour": {
+      "included_in": "titan-pocket-current-04",
+      "host_layout_pages_checked": 9,
+      "image_payload_and_dependencies_verified": true,
+      "physical_phone_tested": false
     }
   }
 }

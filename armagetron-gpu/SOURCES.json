@@ -10,5 +10,5 @@
     "patch": "sdl12-pocket-gles.patch"
   },
   "pending_image_rebuild": false,
-  "included_in": "titan-pocket-current-03"
+  "included_in": "titan-pocket-current-04"
 }

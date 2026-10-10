@@ -1,6 +1,6 @@
 # Installation and major risks
 
-**For experienced Titan Pocket testers with an established stock recovery setup. A tester reported a successful installation and boot of current-03 on October 9, 2026; detailed post-install checks remain pending.**
+**For experienced Titan Pocket testers with an established stock recovery setup. The preceding current-03 image was reported to install and boot successfully. This current-04 rebuild adds Pocket Tour and still needs its own flash/boot test.**
 
 ## Major risks — read first
 

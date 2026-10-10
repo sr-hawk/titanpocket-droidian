@@ -1,7 +1,7 @@
 {
-  "build": "titan-pocket-current-03",
+  "build": "titan-pocket-current-04",
   "date": "2026-10-09",
-  "base": "privacy-cleaned rootfs with current Pocket controls, GPU game runtime, and release app selection",
+  "base": "privacy-cleaned rootfs with current Pocket controls, GPU game runtime, release app selection, and Pocket welcome tour",
   "firmware_baseline": "2023010520",
   "mode": "Download Only",
   "selected_partitions": [
@@ -16,8 +16,8 @@
     },
     {
       "file": "userdata.img",
-      "bytes": 4071630708,
-      "sha256": "039afbd8fdefabb2ed97cda47bb1f7afd72a8c961fa8c2bf4b6770ddb3187170"
+      "bytes": 4071663476,
+      "sha256": "82f57e002d57fac349183e812eee19a835268936023710ec3e59390675c1e85d"
     },
     {
       "file": "MT6771_Android_scatter.txt",
@@ -31,19 +31,19 @@
     "ext4_consistency_checked": true,
     "outer_metadata_and_reservation_verified": true,
     "expanded_bytes": 10737418240,
-    "expanded_sha256": "4310b7244dc32475afb50c5f92a7ad25aa7e344a5084da3e0de7148a1476a64f",
-    "expanded_crc32": "cd5c04f5",
+    "expanded_sha256": "51d9f33404713de3063932fd6154a4a2d10cc9ca551aed3d18af27ed6f891fba",
+    "expanded_crc32": "aa4e36b1",
     "chunk_counts": {
       "0xcac1": 182,
       "0xcac2": 237
     },
     "aosp_decode_passed": true,
-    "rootfs_sha256": "fe8590c9cba81fa98fd10698ffffbf4dddce576176d3edec206938eba5ae42b0",
+    "rootfs_sha256": "533d000bcbe5217f51c88181ea50ae17b30de711562c4ee94977c8cad4e1b6e2",
     "nested_rootfs_verified": true,
     "runtime_tested": false,
     "dependency_objects_checked": 221,
     "installer_preflight_tests_passed": 5,
-    "overlay_payloads_verified": 1243,
+    "overlay_payloads_verified": 1248,
     "offline_package_count": 376,
     "unlisted_packages_removed": 0,
     "unprotected_package_overwrites": 0,
@@ -56,15 +56,9 @@
       "account_databases_match_pristine": true,
       "passwordless_desktop_configuration_unchanged": true,
       "latest_game_payloads_verified": true,
-      "boot_and_scatter_unchanged": true
-    },
-    "user_reported_install_boot": {
-      "reported_on": "2026-10-09",
-      "result": "success",
-      "first_setup": "takes a few minutes",
-      "scope": "Tester report; detailed storage, second-boot, hardware and game results pending"
-    },
-    "runtime_tested_scope": "Existing runtime_tested=false flags refer to comprehensive recorded validation, not the user-reported installation/boot smoke test."
+      "boot_and_scatter_unchanged": true,
+      "pocket_tour_payload_and_dependencies_verified": true
+    }
   },
   "runtime_tested": false,
   "privacy": {
