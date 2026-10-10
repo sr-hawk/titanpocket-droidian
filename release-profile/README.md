@@ -8,4 +8,8 @@ Keep the customized Xfce terminal visible. Hide the extra Console icon, standalo
 
 `exclude-files.txt` lists exact paths relative to the image root. Apply it to both the assembled overlay and the destination filesystem before packaging, so previously staged galleries cannot survive. Merge `overlay/` into the image. Its system-local desktop entries hide shortcuts without removing package files and survive first-boot package installation.
 
-This profile is included in current-03. It does not alter the development phone. Verify the app grid after fresh installation.
+The app-cleanup profile described above is included in current-03. It does not alter the development phone. Verify the app grid after fresh installation.
+
+## Pending next image: Pocket Tour
+
+The overlay now also contains the [Pocket welcome tour](../pocket-tour/README.md), launcher override, and first-run service drop-in. These additions were made after current-03 and are **not in its existing images**. They can be installed separately or included in the next rebuild.

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Welcome to your Pocket",
+    "body": "Droidian is a Linux desktop adapted for the Titan Pocket’s square screen and physical keyboard.\n\nThis tour explains the Pocket controls. Tap Next, or use A / L to move between pages. Use W / S to scroll longer pages.\n\nYou can reopen Pocket Tour from the app overview."
+  },
+  {
+    "title": "Give first setup a few minutes",
+    "body": "On the first boot, the phone expands storage and installs bundled packages before opening the desktop. Keep it powered and let setup finish before restarting.\n\nThose packages are included in the image; first setup does not need internet access. Later boots should be quicker."
+  },
+  {
+    "title": "Home and quick settings",
+    "body": "Press Home to open the app overview. Tap an app to launch it or switch to it.\n\nPress Fn + Home to open quick settings. Use the brightness and volume controls there.\n\nThe touchscreen remains available whenever an app is awkward to navigate with keys."
+  },
+  {
+    "title": "Your physical keyboard",
+    "body": "Fn + W / A / S / D gives up / left / down / right arrows.\n\nSym acts as Control. Back acts as Escape; what it does depends on the app.\n\nTyping briefly pauses keyboard-surface input. Release physical keys before swiping: the pad does not report gestures while a key is held."
+  },
+  {
+    "title": "The keyboard is a scroll pad",
+    "body": "Press the red programmable key to switch between scroll and mouse modes.\n\nIn scroll mode, swipe on the keyboard surface to scroll.\n\nHome is suppressed during a swipe and briefly afterward. Lift your finger and pause before pressing Home again."
+  },
+  {
+    "title": "Use it as a mouse",
+    "body": "In mouse mode, swipe across the keyboard to move the pointer.\n\nTap to left-click. Touch and hold to right-click.\n\nTo drag: tap once, then touch again and hold while moving.\n\nPress the red programmable key to return to scroll mode."
+  },
+  {
+    "title": "Try the games",
+    "body": "Armagetron Advanced:\nA / L — steer left / right\nSpace — brake\nC — change camera\nBack — game menu\n\nMenus: W / S to move, A / L to adjust, Enter to select. Choose the Pocket preset if prompted.\n\nExtreme Tux Racer includes tilt support. Long sessions and all control paths still need testing."
+  },
+  {
+    "title": "An experimental Linux phone",
+    "body": "Bluetooth does not work. Calls, SMS, mobile data, and emergency calling are untested. Cameras, microphones, GPS, NFC, suspend, Wi-Fi reconnect, and battery life need more testing.\n\nSystem updates may overwrite Pocket adaptations. This is not yet a dependable everyday phone."
+  },
+  {
+    "title": "Make yourself at home",
+    "body": "This build starts the desktop unlocked and retains default Droidian accounts. You can change passwords and screen-lock settings yourself.\n\nSSH is disabled. If you enable it, create fresh host keys and configure your own access.\n\nOpen the app overview with Home to explore. Tap Finish to close this tour."
+  }
+]

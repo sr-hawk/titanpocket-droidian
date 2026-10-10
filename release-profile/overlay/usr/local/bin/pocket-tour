@@ -1,0 +1,111 @@
+#!/usr/bin/python3
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Titan Pocket Project contributors
+"""Pocket welcome tour. GTK 3 / PyGObject; no network or privileged actions."""
+import json
+import os
+from pathlib import Path
+import gi
+
+gi.require_version('Gtk', '3.0')
+gi.require_version('Gdk', '3.0')
+from gi.repository import Gdk, Gio, GLib, Gtk, Pango
+
+DATA = Path(os.environ.get('POCKET_TOUR_DATA', '/usr/local/share/titan-pocket/tour.json'))
+
+
+class Tour(Gtk.Application):
+    def __init__(self):
+        super().__init__(application_id='org.titanpocket.Tour', flags=Gio.ApplicationFlags.FLAGS_NONE)
+        self.index = 0
+
+    def do_activate(self):
+        if self.get_active_window():
+            self.get_active_window().present()
+            return
+        self.pages = json.loads(DATA.read_text())
+        self.window = Gtk.ApplicationWindow(application=self, title='Pocket Tour')
+        self.window.set_default_size(680, 640)
+        self.window.set_size_request(280, 320)
+        self.window.connect('key-press-event', self.key_pressed)
+        header = Gtk.HeaderBar(title='Pocket Tour', show_close_button=True)
+        self.window.set_titlebar(header)
+        layout = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        layout.set_border_width(18)
+        self.window.add(layout)
+        self.counter = Gtk.Label(xalign=0)
+        layout.pack_start(self.counter, False, False, 0)
+        self.scroll = Gtk.ScrolledWindow()
+        self.scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        self.scroll.set_vexpand(True)
+        layout.pack_start(self.scroll, True, True, 0)
+        content = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
+        self.scroll.add(content)
+        self.heading = Gtk.Label(xalign=0)
+        self.heading.set_line_wrap(True)
+        self.heading.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
+        self.heading.set_max_width_chars(36)
+        content.pack_start(self.heading, False, False, 0)
+        self.body = Gtk.Label(xalign=0, yalign=0)
+        self.body.set_line_wrap(True)
+        self.body.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
+        self.body.set_max_width_chars(48)
+        self.body.set_selectable(False)
+        content.pack_start(self.body, False, False, 0)
+        footer = Gtk.Box(spacing=12)
+        self.previous = Gtk.Button(label='Previous')
+        self.previous.connect('clicked', lambda *_: self.move(-1))
+        self.next = Gtk.Button(label='Next')
+        self.next.connect('clicked', lambda *_: self.move(1))
+        for button in (self.previous, self.next):
+            button.set_size_request(-1, 48)
+            footer.pack_start(button, True, True, 0)
+        layout.pack_start(footer, False, False, 0)
+        hint = Gtk.Label(label='A / L: pages · W / S: scroll · Back: close')
+        hint.set_line_wrap(True)
+        layout.pack_start(hint, False, False, 0)
+        css = Gtk.CssProvider()
+        css.load_from_data(b'label { font-size: 20px; } button { font-size: 20px; }')
+        layout.get_style_context().add_class('pocket-tour')
+        Gtk.StyleContext.add_provider_for_screen(self.window.get_screen(), css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        self.render()
+        self.window.show_all()
+
+    def render(self):
+        page = self.pages[self.index]
+        self.counter.set_text(f'{self.index + 1} of {len(self.pages)}')
+        self.heading.set_markup('<span size="x-large" weight="bold">' + GLib.markup_escape_text(page['title']) + '</span>')
+        self.body.set_text(page['body'])
+        self.previous.set_sensitive(self.index > 0)
+        self.next.set_label('Finish' if self.index == len(self.pages) - 1 else 'Next')
+        self.scroll.get_vadjustment().set_value(0)
+
+    def move(self, amount):
+        target = self.index + amount
+        if target >= len(self.pages):
+            self.window.close()
+        elif target >= 0:
+            self.index = target
+            self.render()
+
+    def key_pressed(self, _window, event):
+        if event.state & (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.MOD1_MASK | Gdk.ModifierType.SUPER_MASK):
+            return False
+        key = Gdk.keyval_name(event.keyval).lower()
+        if key in ('a', 'left'):
+            self.move(-1)
+        elif key in ('l', 'right'):
+            self.move(1)
+        elif key in ('w', 'up', 's', 'down'):
+            adjustment = self.scroll.get_vadjustment()
+            step = -80 if key in ('w', 'up') else 80
+            adjustment.set_value(max(0, min(adjustment.get_value() + step, adjustment.get_upper() - adjustment.get_page_size())))
+        elif key == 'escape':
+            self.window.close()
+        else:
+            return False
+        return True
+
+
+if __name__ == '__main__':
+    raise SystemExit(Tour().run())

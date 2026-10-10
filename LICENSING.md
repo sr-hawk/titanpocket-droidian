@@ -4,7 +4,7 @@ Droidian is a distribution of separately licensed components. This project does 
 
 ## Our original materials
 
-The original prose in this repository's Markdown documents and FLASH.txt, and the independent launcher `armagetron-gpu/armagetronad-pocket`, are available under the [MIT license](LICENSE), to the extent the project contributors hold rights in them. Upstream quotations, notices, code excerpts, and other third-party material are excluded. Future source files are not automatically covered: record their provenance and license when adding them.
+The original prose in this repository's Markdown documents and FLASH.txt, and the independent launcher `armagetron-gpu/armagetronad-pocket`, and the original Pocket Tour code, JSON content, compatibility wrapper, launcher, service override, and installer are available under the [MIT license](LICENSE), to the extent the project contributors hold rights in them. Upstream quotations, notices, code excerpts, and other third-party material are excluded. Future source files are not automatically covered: record their provenance and license when adding them.
 
 ## Third-party code and modifications
 

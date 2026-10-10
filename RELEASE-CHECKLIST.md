@@ -25,3 +25,7 @@ The updated `titan-pocket-current-03` candidate is staged locally. Nothing has b
 Only this repository’s tracked files, `boot.img`, `userdata.img`, and the reviewed source/license package should be shared. Images are deliberately excluded from Git. Do not share `.git`, private work folders, old images, debug helpers, SSH files, or logs from the development workspace.
 
 Run `sha256sum -c SHA256SUMS` beside the images and scatter. Checksums identify the candidate; they do not replace a boot test.
+
+## Pending next image
+
+- Install and test the Pocket Tour replacement on the phone. Its sources and release overlay are prepared; current-03 images do not contain it. Rebuild and validate a new candidate before claiming image inclusion.
