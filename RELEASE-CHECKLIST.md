@@ -1,6 +1,6 @@
 # Before publishing
 
-The owner reports `titan-pocket-current-07` works well. Final review of the exact images found no personal credentials or user data; see FINAL-PRIVACY-REVIEW.json. Nothing has been uploaded.
+The owner reports `titan-pocket-current-07` works well. Final review of the exact images found no personal credentials or user data; see FINAL-PRIVACY-REVIEW.json. Flash images have not been uploaded; publishing the repository files does not publish a binary release.
 
 ## Completed
 
