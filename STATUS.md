@@ -2,7 +2,7 @@
 
 Updated October 10, 2026 for `titan-pocket-current-07`.
 
-The recovered October 9 personal component baseline is used, with the approved privacy cleanup, gallery/launcher cleanup and Pocket Tour replacement. The original personal Phosh is retained. Packages and custom components are installed at their active paths during assembly. First boot only adds storage expansion to normal Droidian startup. The owner reports that current-06 works after a full flash. Current-07 changes only Armagetron launcher/help data and build metadata; its visual acceptance test is pending.
+The recovered October 9 personal component baseline is used, with the approved privacy cleanup, gallery/launcher cleanup and Pocket Tour replacement. The original personal Phosh is retained. Packages and custom components are installed at their active paths during assembly. First boot only adds storage expansion to normal Droidian startup. The owner reports that current-06 works after a full flash. Current-07 changes only Armagetron launcher/help data and build metadata; the owner now reports this release works well.
 
 | Area | Development-phone evidence and included functionality |
 | --- | --- |
@@ -31,7 +31,7 @@ The 376 bundled packages are installed and configured on the build computer unde
 - The saved October 9 phone hashes and later game-deployment records identify the recovered personal baseline. This is an offline comparison, not a new test of the phone.
 - Native payload inventory, ELF dependency-presence audit, offline package dependency/conflict checks, completed offline installation and package-state validation, image file/link/mode readback, ext4 checks, sparse expansion, and nested-root verification.
 - Privacy checks repeated after updates; SSH remains disabled in both boot stages.
-- Current-06 full-flash/boot success is user-reported. Its reported defects were the Armagetron icon and desktop-oriented help. Current-07 needs its own full-flash check; individual hardware tests are not implied by the general success report.
+- Current-06 full-flash/boot success is user-reported. Its reported defects were the Armagetron icon and desktop-oriented help. The owner now reports current-07 works well; individual hardware tests are not implied by that general success report.
 
 `COMPONENTS.json` records the active custom-file hashes. `MANIFEST.json` and `SHA256SUMS` identify the image pair. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) before publication.
 

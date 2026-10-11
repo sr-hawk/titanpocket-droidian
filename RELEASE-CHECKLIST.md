@@ -1,6 +1,6 @@
 # Before publishing
 
-The updated `titan-pocket-current-07` candidate is staged locally. Nothing has been uploaded.
+The owner reports `titan-pocket-current-07` works well. Final review of the exact images found no personal credentials or user data; see FINAL-PRIVACY-REVIEW.json. Nothing has been uploaded.
 
 ## Completed
 
@@ -15,7 +15,7 @@ The updated `titan-pocket-current-07` candidate is staged locally. Nothing has b
 
 ## Still required before public binary distribution
 
-- Fresh-flash current-07 and record first boot, storage expansion, second boot, keyboard/mouse, brightness, audio, games, and Pocket Tour. The owner reports a working full flash of current-06. Check the repaired Armagetron icon, both welcome messages, menu help and in-game controls tips in current-07.
+- Record detailed first-boot, storage-expansion, second-boot, keyboard/mouse, brightness, audio, game and Pocket Tour checks; the general current-07 success report does not claim all individual tests. The owner reports a working full flash of current-06. Check the repaired Armagetron icon, both welcome messages, menu help and in-game controls tips in current-07.
 - Assemble matching corresponding source, local modifications, build instructions, and upstream license notices for the distributed components. This repository currently contains release metadata/documentation, not a complete source release or reproducible build environment. No blanket license is assigned to the combined image. See LICENSING.md for the scoped MIT grant and upstream obligations. Also resolve redistribution permission for embedded vendor/firmware binaries.
 - Record the successfully tested SP Flash Tool version, Download Agent provenance/hash, and connection sequence without distributing or linking tool/DA downloads. The install guide currently requires an already established Pocket setup.
 - Add the actual download URL only after publication; use the host’s supported attachment size/splitting procedure for the multi-gigabyte userdata image.

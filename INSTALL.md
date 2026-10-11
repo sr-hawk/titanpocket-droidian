@@ -1,6 +1,6 @@
 # Installation and major risks
 
-**For experienced Titan Pocket testers with an established stock recovery setup. This image contains the preinstalled Pocket system and needs a full-flash acceptance test.**
+**For experienced Titan Pocket testers with an established stock recovery setup. This image contains the preinstalled Pocket system. The owner reports current-07 works well; follow the checks below on your own phone.**
 
 ## Major risks — read first
 

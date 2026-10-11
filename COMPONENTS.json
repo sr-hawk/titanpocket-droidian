@@ -2,7 +2,7 @@
   "build": "titan-pocket-current-07",
   "date": "2026-10-10",
   "scope": "Key custom release payloads; hashes describe cleaned release bytes, not personal device state.",
-  "runtime_tested": false,
+  "runtime_tested": true,
   "components": [
     {
       "path": "/usr/libexec/phosh",
@@ -284,7 +284,8 @@
         "icon_path_corrected": true,
         "english_pocket_help_entries": 33,
         "game_binary_and_bindings_unchanged": true,
-        "full_flash_visual_check_pending": true
+        "full_flash_visual_check_pending": false,
+        "owner_reported_working_well": true
       }
     },
     "pocket_tour": {
@@ -309,5 +310,10 @@
     "gtk3_import_passed": true,
     "schema_available": true,
     "performed_during_image_assembly": true
+  },
+  "runtime_report": {
+    "source": "owner report",
+    "current_07_reported_working_well": true,
+    "individual_hardware_tests_not_implied": true
   }
 }

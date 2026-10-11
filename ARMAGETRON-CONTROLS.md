@@ -1,6 +1,6 @@
 # Armagetron on the Titan Pocket
 
-Current-06 passed the owner’s full-flash/boot test, with a missing game icon and desktop-oriented help reported. Current-07 fixes the launcher icon and supplies a Pocket introduction and control tips in English. The game binary, preset, and graphics runtime are unchanged; these presentation fixes still need a full-flash visual check.
+Current-06 passed the owner’s full-flash/boot test, with a missing game icon and desktop-oriented help reported. Current-07 fixes the launcher icon and supplies a Pocket introduction and control tips in English. The game binary, preset, and graphics runtime are unchanged; the owner reports the updated release works well.
 
 | Key | Action |
 | --- | --- |

@@ -22,18 +22,20 @@
       "dropbear.service",
       "dropbear.socket"
     ],
-    "known_credential_patterns_checked": 14,
+    "known_credential_patterns_checked": 15,
     "known_credential_hits": [],
     "home_files_match_pristine": true,
     "account_databases_match_pristine": true,
     "developer_build_paths_scrubbed": true,
     "ssh_enabled_by_default": false,
     "phosh_starts_unlocked": true,
-    "default_login_records_preserved": true
+    "default_login_records_preserved": true,
+    "final_review_file": "FINAL-PRIVACY-REVIEW.json",
+    "final_review_passed": true
   },
   "build": "titan-pocket-current-07",
   "base": "User-tested current-06 installed system; three data files updated for Armagetron icon/help and build identity",
-  "runtime_tested": false,
+  "runtime_tested": true,
   "base_runtime_report": {
     "build": "titan-pocket-current-06",
     "source": "user report on 2026-10-10",
@@ -55,7 +57,6 @@
     "aosp_decode_passed": true,
     "rootfs_sha256": "3e1ba5f8d18bff3100386bf59ee0c9dc7d681a6388db7367c151cd40ad0b2a5b",
     "nested_rootfs_verified": true,
-    "runtime_tested": false,
     "personal_paths_verified": 181,
     "active_files_match_assembled_root": true,
     "package_database_and_diversions_verified": true,
@@ -101,7 +102,8 @@
     "base_package_database_and_diversions_unchanged": true,
     "boot_and_scatter_unchanged": true,
     "privacy_review_passed": true,
-    "full_flash_test_pending": true
+    "full_flash_test_pending": false,
+    "runtime_tested_during_assembly": false
   },
   "payloads": [
     {
@@ -119,5 +121,10 @@
       "bytes": 20831,
       "sha256": "6fc2436227c5ee436398fb38f08dd090395d79002e007116a91589c513ea42e1"
     }
-  ]
+  ],
+  "runtime_report": {
+    "source": "owner report",
+    "current_07_reported_working_well": true,
+    "individual_hardware_tests_not_implied": true
+  }
 }

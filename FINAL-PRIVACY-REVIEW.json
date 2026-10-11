@@ -1,0 +1,77 @@
+{
+  "build": "titan-pocket-current-07",
+  "review_date": "2026-10-10",
+  "result": "No personal credentials or user data found in the reviewed release",
+  "passed": true,
+  "images_modified": false,
+  "payloads": [
+    {
+      "file": "boot.img",
+      "bytes": 33554432,
+      "sha256": "5fb9c01757030888f6510e551b43a0e66682f62fe8624107b14e337819a6f692"
+    },
+    {
+      "file": "userdata.img",
+      "bytes": 4715817620,
+      "sha256": "f3d064f4a89a76cc2fd49d6f1bd57c9c4b32e8d99e9ce5eaef06d4219720563d"
+    },
+    {
+      "file": "MT6771_Android_scatter.txt",
+      "bytes": 20831,
+      "sha256": "6fc2436227c5ee436398fb38f08dd090395d79002e007116a91589c513ea42e1"
+    }
+  ],
+  "verification": {
+    "release_checksums_verified": true,
+    "exact_public_userdata_decoded": true,
+    "nested_root_independently_verified": {
+      "bytes": 8589934592,
+      "sha256": "3e1ba5f8d18bff3100386bf59ee0c9dc7d681a6388db7367c151cd40ad0b2a5b",
+      "matches_public_userdata_and_reviewed_root": true
+    },
+    "root_bytes_scanned": 8589934592,
+    "known_credential_identity_patterns_checked": 15,
+    "known_personal_matches": 0,
+    "boot_private_key_or_token_findings": 0,
+    "initramfs_and_linux_ssh_disabled": true,
+    "account_databases_match_pristine": true,
+    "home_default_regular_files_match_pristine": 9,
+    "root_default_regular_files_match_pristine": 2,
+    "saved_network_enrollment_account_state_absent": true,
+    "android_data_empty": true,
+    "android_system_image_matches_pristine": true,
+    "machine_ids_blank": true,
+    "no_user_log_files": true,
+    "vendor_and_boot_identity_assignments_absent": true,
+    "public_file_allowlist_and_git_history_review_passed": true
+  },
+  "upstream_findings": {
+    "generic_pattern_matches": 26,
+    "all_match_unmodified_upstream_files": true,
+    "gnutls_self_test_key_occurrences": 14,
+    "openvpn_sample_key_occurrences": 7,
+    "aws_shaped_binary_constants": 5,
+    "git_netrc_is_upstream_test_fixture": true,
+    "files": [
+      "/usr/bin/wget",
+      "/usr/lib/aarch64-linux-gnu/libgnutls.a",
+      "/usr/lib/aarch64-linux-gnu/libgnutls.so.30.40.3",
+      "/usr/lib/aarch64-linux-gnu/libunistring.so.5.2.0",
+      "/usr/share/doc/openvpn/examples/sample-config-files/loopback-client",
+      "/usr/share/doc/openvpn/examples/sample-keys/ca.key",
+      "/usr/share/doc/openvpn/examples/sample-keys/client-ec.key",
+      "/usr/share/doc/openvpn/examples/sample-keys/client-pass.key",
+      "/usr/share/doc/openvpn/examples/sample-keys/client.key",
+      "/usr/share/doc/openvpn/examples/sample-keys/server-ec.key",
+      "/usr/share/doc/openvpn/examples/sample-keys/server.key"
+    ],
+    "action": "Preserved unmodified upstream test/example data; none are personal credentials"
+  },
+  "intentional_defaults": "Passwordless desktop start and default Droidian accounts retained as requested",
+  "runtime_report": {
+    "source": "owner report",
+    "current_07_reported_working_well": true,
+    "individual_hardware_tests_not_implied": true
+  },
+  "scope": "Exact listed release images, public files and Git history. Other workspace files are outside this review. Signature scans and baseline comparisons do not establish support for every possible credential format."
+}
