@@ -4,4 +4,4 @@ Current-07 installs the recovered personal Phosh binary directly at `/usr/libexe
 
 This is the tuned Pocket shell with the original personal controls and layout. The extra current-05 drag-mode patch is not part of this image. Physical Home, Fn + Home, and unwanted bottom-swipe behavior must be checked in the full-flash acceptance test.
 
-No Pocket first-boot installation or desktop-conversion service is shipped. The desktop waits for storage preparation. Phosh retains its upstream GPL terms; the overall image is not MIT. Complete corresponding source/build material is still tracked in LICENSING.md and RELEASE-CHECKLIST.md.
+No Pocket first-boot installation or desktop-conversion service is shipped. The desktop waits for storage preparation. Phosh retains its upstream GPL terms; the overall image is not MIT. The local source/build snapshot is included in the release attachments described in SOURCES.md.

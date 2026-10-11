@@ -22,11 +22,11 @@ Keep existing copyright notices and the applicable upstream license. Changes to 
 | Android/vendor/firmware binaries | Do not assume MIT or GPL permission. Identify what is actually embedded in our images and establish redistribution rights. Components left on the owner's stock partitions are distinct from binaries we distribute. |
 | Scatter and desktop override files | Not covered by our MIT grant pending provenance review; preserve any applicable original terms. |
 
-This is an initial licensing review, not a complete inventory of the image. Choosing GPL for the repository would not resolve missing source or permission for proprietary binaries.
+This records the licenses reviewed for this project; it is not a claim that every third-party file has been individually audited. See [SOURCES.md](SOURCES.md) for the published source snapshots and the stock-kernel provenance boundary.
 
-## Before distributing binaries
+## Published source materials
 
-Record every distributed component's exact version, origin, license, and local modifications. Preserve required notices. Provide the corresponding source and build/install material required by each applicable license, including local patches; a generic upstream homepage or a partial patch collection does not establish compliance. Review the kernel and bundled Android/vendor files as well as userspace. Independent MIT materials may coexist with GPL components, but combined or derivative programs still follow the applicable upstream requirements.
+The current-07 release includes the local modified source trees, patches, build/assembly scripts, and cached upstream dependency source archives. Their revision and checksum manifests are described in [SOURCES.md](SOURCES.md). Existing source notices are retained. Independent MIT materials coexist with GPL/LGPL components; upstream and derivative files retain their applicable terms. The stock kernel/DTB are retained binaries, not products of the included supplementary-module kernel reconstruction.
 
 SP Flash Tool and Download Agent binaries are not included, mirrored, or linked for download. The guide only documents our release files and required settings. Tool version/hash information used to reproduce a test is identification, not a download endorsement.
 

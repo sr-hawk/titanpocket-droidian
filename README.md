@@ -47,6 +47,6 @@ Please report the build name, stock firmware version, steps to reproduce, and ex
 
 Built on Droidian, Phosh, Phoc, wlroots, GTK, libhandy, libadwaita, and the stock Unihertz kernel/vendor stack, with the Ubuntu Touch supplemental VT module work. This is an unofficial community experiment; components retain their respective licenses.
 
-Images are local release attachments, excluded from Git. No download has been published yet. See [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) for remaining publication work.
+Download the finished images and source archives from the [current-07 release](https://github.com/sr-hawk/titanpocket-droidian/releases/tag/titan-pocket-current-07). Images are release attachments, excluded from Git. Read `UNPACK.txt` to extract userdata and verify the checksums before following [INSTALL.md](INSTALL.md). See [SOURCES.md](SOURCES.md) for the source attachments and [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) for testing coverage.
 
 Original project documentation and the independent game launcher use MIT. Upstream components and modifications retain their applicable licenses; the image is not MIT-licensed as a whole. See [LICENSING.md](LICENSING.md). SP Flash Tool and Download Agent downloads are not provided or linked.

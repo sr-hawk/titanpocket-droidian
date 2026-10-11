@@ -8,7 +8,7 @@ Sources and licenses:
 
 - GL4ES: upstream repository and exact revision in `SOURCES.json`; no local changes. MIT license included.
 - sdl12-compat 1.2.68: https://github.com/libsdl-org/sdl12-compat/releases/tag/release-1.2.68 ; apply `sdl12-pocket-gles.patch` at its root. zlib license included.
-- Existing Armagetron Pocket build and system SDL2/libhybris remain required. This directory does not complete the whole image's corresponding-source release.
+- Existing Armagetron Pocket build and system SDL2/libhybris remain required. The full local game source/build snapshot is included in the source attachments described in SOURCES.md.
 
 Build both libraries with CMake using the existing arm64 cross toolchain and matching Droidian sysroot. GL4ES options: `-DCMAKE_BUILD_TYPE=Release -DHYBRIS=ON`; SDL options: `-DCMAKE_BUILD_TYPE=Release`. Use `-ffile-prefix-map` for local build paths and check resulting artifacts for personal paths before distribution. The SDL patch adds an opt-in GLES2 context and optional frame-rate diagnostics; other applications need not opt in.
 
