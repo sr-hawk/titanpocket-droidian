@@ -5,11 +5,16 @@
 ## Major risks — read first
 
 1. **Complete userdata loss.** This installation replaces both `boot` and `userdata`. Apps, accounts, messages, photos, and other files in userdata are erased. It is not an in-place upgrade.
-2. **Loss of IMEI and calibration data.** Never use **Format All + Download**, a separate format operation, or **Firmware Upgrade** with this package. Formatting protected/device-specific storage can destroy modem identity, radio calibration, and other data unique to your phone. A generic stock firmware download is not a backup of that data.
+2. **Loss of baseband/modem data, IMEI, calibration, and factory MAC addresses.** Improper formatting or flashing can overwrite data unique to your phone, including modem identity and radio calibration, and factory Wi-Fi/Bluetooth MAC addresses. The phone may still boot while cellular, Wi-Fi, or Bluetooth no longer works correctly. Never use **Format All + Download**, a separate format operation, or **Firmware Upgrade** with this package. Loss may be permanent without a usable backup from your own phone; recovery is not guaranteed.
 3. **An unbootable or hard-bricked phone.** A wrong scatter, wrong device, unexpected partition layout, wrong Download Agent, or accidentally selected bootloader/preloader partition can break recovery as well as normal boot. Recovery is not guaranteed.
 4. **Interrupted writes.** A USB disconnect, power failure, or host crash during flashing can leave a partially written phone that will not boot. Use a charged phone, reliable cable, and stable host power.
 5. **An experimental, unlocked system.** Cellular and emergency calling are untested, suspend/battery behavior is uncertain, and the desktop starts unlocked. Do not rely on it as your only phone or use it for sensitive personal data.
 
+## Protect your phone’s unique data
+
+Before flashing, use your established backup procedure to save the phone’s device-specific partitions off the phone and verify that the backups are readable and can be restored with your recovery setup. The supplied scatter includes `nvram`, `nvdata`, `protect1`, `protect2`, `persist`, and `proinfo`; these are examples of partitions this release must **not** write or format. The complete flashing allowlist is **`boot` and `userdata` only**.
+
+A stock firmware archive is not a backup of your phone’s original IMEI, calibration, or factory MAC addresses. Reinstalling stock firmware does not guarantee their recovery. Keep device-specific backups private: do not upload them to GitHub or include them in a shared image. Another phone’s backup is not a substitute for your own. If these data are lost, manufacturer/service assistance may be necessary and may still be unable to restore them.
 
 ## Supported starting point
 

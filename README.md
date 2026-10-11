@@ -4,7 +4,7 @@ A Linux phone experiment built around the Pocket’s physical keyboard and squar
 
 **Build: `titan-pocket-current-07` — experimental release candidate.** The Pocket shell, compositor, toolkits, input controls, game updates, and Pocket Tour are installed in the image before flashing. Packages are installed and configured during assembly. The only additional first-boot setup is storage expansion; there is no Pocket package installation on the phone or switch from a stock desktop. **First startup can take a few minutes.** The preceding current-06 passed the owner’s full-flash/boot test. Current-07 fixes Armagetron’s launcher icon and English Pocket introduction/control help; the owner now reports current-07 works well. Individual hardware coverage remains as listed in STATUS.md.
 
-> **Flashing erases the phone’s userdata. Incorrect SP Flash Tool settings can destroy device-specific modem data or leave the phone unbootable, possibly beyond ordinary recovery. Read [installation and major risks](INSTALL.md) before using it.**
+> **Flashing erases the phone’s userdata. Incorrect SP Flash Tool settings can erase baseband/modem identity, IMEI, radio calibration, and factory Wi-Fi/Bluetooth MAC addresses, or brick the phone. A stock firmware download cannot recreate your phone’s unique data; loss may be permanent. Use Download Only with only `boot` and `userdata` selected. Read [installation and major risks](INSTALL.md) before using it.**
 
 ## What it can do
 
