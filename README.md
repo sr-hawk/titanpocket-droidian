@@ -6,6 +6,8 @@ A Linux phone experiment built around the Pocket’s physical keyboard and squar
 
 > **Flashing erases the phone’s userdata. Incorrect SP Flash Tool settings can erase baseband/modem identity, IMEI, radio calibration, and factory Wi-Fi/Bluetooth MAC addresses, or brick the phone. A stock firmware download cannot recreate your phone’s unique data; loss may be permanent. Use Download Only with only `boot` and `userdata` selected. Read [installation and major risks](INSTALL.md) before using it.**
 
+> **Compatibility: tested only on a Titan Pocket with TEE/non-EEA stock firmware `2023010520` and UFS storage, kernel `4.14.186-g40b2a1864-dirty`, an unlocked bootloader, and the original partition layout. The supplied `boot.img` retains that baseline's stock kernel/DTB; the scatter targets `g66v71c2k_dfl_tee` and UFS. EEA firmware and other hardware/storage variants are unverified. Do not flash this package if your variant or layout differs or is unknown. See [compatibility checks](INSTALL.md#variant-compatibility).**
+
 ## What it can do
 
 - Boot Droidian/Phosh with touchscreen and physical keyboard input.

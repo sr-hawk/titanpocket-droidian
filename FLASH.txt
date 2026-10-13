@@ -3,7 +3,10 @@ READ INSTALL.md FIRST. FLASHING ERASES USERDATA.
 WRONG SETTINGS CAN ERASE BASEBAND/MODEM DATA, IMEI, RADIO CALIBRATION, AND FACTORY WI-FI/BLUETOOTH MAC ADDRESSES, OR BRICK THE PHONE.
 Loss may be permanent. Stock firmware is NOT a backup of your phone’s unique data.
 Keep verified backups from your own phone off-device and private; never publish them.
-Titan Pocket, stock 2023010520, unlocked bootloader, original partition layout only.
+TESTED BASELINE ONLY: Titan Pocket, TEE/non-EEA stock 2023010520, UFS storage,
+kernel 4.14.186-g40b2a1864-dirty, unlocked bootloader, original partition layout.
+EEA and other hardware/storage variants are UNVERIFIED. Do not flash if different or unknown.
+Scatter targets g66v71c2k_dfl_tee and UFS. Never edit its storage type or addresses to force a match.
 Verify SHA256SUMS. Use your established Pocket Download Agent and recovery setup.
 SP Flash Tool: Download Only. Select ONLY boot and userdata from this release.
 NEVER Format All + Download, use a separate format operation, or choose Firmware Upgrade.

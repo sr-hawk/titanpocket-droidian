@@ -18,10 +18,20 @@ A stock firmware archive is not a backup of your phone’s original IMEI, calibr
 
 ## Supported starting point
 
-- **Unihertz Titan Pocket only**, stock firmware **2023010520**, kernel **4.14.186-g40b2a1864-dirty**, and an **unlocked bootloader**.
+- **Unihertz Titan Pocket only**, **TEE/non-EEA** stock firmware **2023010520**, **UFS storage**, kernel **4.14.186-g40b2a1864-dirty**, and an **unlocked bootloader**. This is the tested baseline; EEA firmware and other hardware/storage variants are unverified.
 - The original stock partition layout and vendor stack must still be present. Other Titan models, other firmware versions, and repartitioned devices are not validated.
 - Backups stored off the phone, matching stock firmware, and a recovery procedure already established for your own phone. Do not assume that a stock archive restores device-specific data.
 - SP Flash Tool and a Download Agent already known to work with your Pocket. Unlocking, choosing an initial DA, and recovering an unknown device are outside this guide. Neither SP Flash Tool nor a Download Agent is supplied, mirrored, endorsed, or linked for download by this project.
+
+## Variant compatibility
+
+The supplied `boot.img` retains the stock kernel and DTB from the developer's TEE/non-EEA baseline. It is not a universal Titan-family boot image. The supplied scatter explicitly targets project `g66v71c2k_dfl_tee`, `storage_type: UFS`, and UFS logical units. **Do not use this package on an eMMC device, an EEA baseline, a different Titan model, or a device whose variant/layout you have not established.** Do not rename the project or change the scatter's storage type or addresses to force compatibility.
+
+Before replacing Android, record the complete original build identifier from About phone/Wireless update and confirm it against your matching stock firmware. Confirm internal storage and the actual partition layout using your established read-only device inspection or Download Agent logs. The supplied scatter describes this release; it does not identify your phone. Your location, storage capacity, a speed benchmark, and the presence of a `tee` partition do not establish the firmware variant.
+
+The other storage technology is **eMMC**, not EFS. Reports about eMMC/UFS revisions of the original Titan do not establish that the Pocket has the same revisions. The retained Pocket stock kernel enables both UFS and eMMC support, and the stock firmware scatter contains both layouts; neither fact proves that this release works on another storage variant. Kernel/DTB, stock vendor modules, bootloader expectations, and partition geometry must also match.
+
+An incompatible boot image can prevent startup and require restoration of matching stock images. We have not established that an EEA/TEE mismatch alone causes a permanent hard brick. Writing the wrong partitions or layout, overwriting preloader/bootloaders, or formatting device-specific data can cause more serious damage, including loss of recovery or unique identity/calibration data. Keep the boot/userdata-only allowlist and matching recovery setup described above.
 
 ## Flash the candidate
 
